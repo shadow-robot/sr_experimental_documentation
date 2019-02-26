@@ -1,2 +1,2 @@
 # sr_experimental_documentation
-Documentation of Shadow experimental products
+Documentation of Shadow Robot experimental products
