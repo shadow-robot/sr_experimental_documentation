@@ -27,7 +27,7 @@ Picture
 * USB to USB Cable
 * 2 tripods for mounting the 2 lighthouses around the operator
 
-### UR10 Robot Arm + Hand E + Demo Table
+### UR10 Robot Arm + Dexterous Hand + Demo Table
 * UR10 with supported [firmware]()
 * 2 x Ethernet Cable
 * Arm Control Box

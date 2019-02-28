@@ -1,4 +1,5 @@
-# Shadow Robot Experimental Products Documentation
+# Experimental Products Documentation
+
 This is the starting point for the Shadow Robot documentation of experimental projects
 
 ## Contents
