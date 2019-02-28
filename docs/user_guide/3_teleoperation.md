@@ -15,7 +15,7 @@
                                                                                                                                                                           
 * CyberGlove Power Switch + D-Sub type connector + USB Serial Adaptor
 
-Picture
+(Picture)
 
 ### HTC Vive
 * VIVE tracker + Micro USB + Power Adapter
@@ -69,7 +69,19 @@ Check the hand firmware version by executing those instructions:
    ```
 ### UR10 Firmware Check
 
+1. Start the UR10 pendant by pressing the power button.
+2. On the right top corner of the screen, click on the About button
+3. Check the software version by comparing the number highlighted in the picture below with the list of UR10 Supported firmware
+4. If you cannot find the number displayed in the screen in the list of UR10 Supported firmware, please contact someone from the Software Team.
+
 ### Collision scene Check
+
+The geometry scene for collision avoidance is by default the one in our Office Demo Room. However, in other environments, there may be the necessity for a different scene.
+
+First, it would be good to check whether any of our available scenes suits your need and follow the instructions to change it.
+
+If NONE of the available scenes are good, please follow this instructions to create one [link to instructions].
+
 
 ## Setup
 ### UR10
