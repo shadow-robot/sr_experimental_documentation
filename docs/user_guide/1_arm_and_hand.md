@@ -2,7 +2,11 @@
 
 This documentation describes the set up of a Shadow Dexterous Hand attached to a UR arm (UR5 or UR10).
 
-![desktop_icon](../img/UR10_hand_E.jpeg)
+```eval_rst
+.. image:: ../img/UR10_hand_E.jpeg
+  :width: 400
+  :align: center
+```
 
 ## Setting up the system 
 
