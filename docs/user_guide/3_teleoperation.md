@@ -65,7 +65,7 @@ Check the hand firmware version by executing those instructions:
 4. In the terminal scroll up to the firmware version that gets printed in yellow and it should look like in the picture below:
 5. Make sure the firmware version corresponds to the first row and second column of the Firmware version and git commit hash table.
    ```eval_rst
-   If it does not or you have any doubt about this procedure, please contact someone from the Software Team
+   .. Note:: If it does not or you have any doubt about this procedure, please contact someone from the Software Team
    ```
 ### UR10 Firmware Check
 
