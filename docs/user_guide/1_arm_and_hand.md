@@ -30,33 +30,33 @@ In order to use the robot with our driver you need to change the network setup o
 1. To setup the IP of the robot Press Exit on Initialization screen:
    ```eval_rst
    .. image:: ../img/configure_arm_1.jpg
-   :width: 400
-   :align: center
+     :width: 400
+     :align: center
    ```
    You should see the following screen:
    ```eval_rst
    .. image:: ../img/configure_arm_2.jpg
-   :width: 400
-   :align: center
+     :width: 400
+     :align: center
    ```
 2. Press the "Setup Robot" button:
    ```eval_rst
    .. image:: ../img/configure_arm_3.jpg
-   :width: 400
-   :align: center
+     :width: 400
+     :align: center
    ```
 3. Then press the "Network" button. In this screen, you need to enable the network by clicking the "Static Address" radio button. Change the IP address and Subnet mask as shown below:
    * IP address: 192.168.1.1
    * Subnet mask: 255.255.255.0
    ```eval_rst
    .. image:: ../img/configure_arm_4.jpg
-   :width: 400
-   :align: center
+     :width: 400
+     :align: center
    ```
 4. Press "Apply" when you finish.
 
 #### Arm Calibration Procedure
-
+Follow this steps if you have 
 Start with hand not mounted on arm. Mount calibration stylus as shown below.
 
 [TODO: port this confluence doc](https://shadowrobot.atlassian.net/wiki/spaces/SDSR/pages/98074625/Arm+Calibration+Procedure?atlOrigin=eyJpIjoiNGE0YmNlN2VhMDBlNGY5ZDk0OGIwNzg2NTAwOGZjNDkiLCJwIjoiYyJ9)
