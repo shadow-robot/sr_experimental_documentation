@@ -12,6 +12,19 @@ This documentation describes the set up of a Shadow Dexterous Hand attached to a
 
 ### Setting up arm
 
+1. Unpack the robot arm and the control box.
+2. Mount the robot on a sturdy surface strong enough to withstand at least 10 times
+3. Place the control box on its foot.
+4. Plug on the robot cable between the robot and the control box.
+5. Plug in the mains plug of the control box.
+
+To quickly start up the robot after it has been installed, perform the following steps:
+1. Press the power button on the teach pendant.
+2. Wait a minute while the system is starting up, displaying text on the touch screen.
+3. Press ON button on the touch screen. Wait a few seconds until robot state changes to idle.
+4. Press START button on the touch screen. The robot now makes a sound and moves a little while releasing the brakes.
+
+
 #### Configuring the network
 
 n order to use the robot with our driver you need to change the network setup of the robot via the pedant. 
