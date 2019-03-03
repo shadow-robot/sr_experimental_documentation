@@ -28,6 +28,7 @@ To quickly start up the robot after it has been installed, perform the following
 
 In order to use the robot with our driver you need to change the network setup of the robot via the pedant, performing the following steps:
 1. To setup the IP of the robot Press Exit on Initialization screen:
+
    ```eval_rst
    .. image:: ../img/configure_arm_1.jpg
      :width: 600
