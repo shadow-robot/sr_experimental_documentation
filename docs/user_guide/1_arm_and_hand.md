@@ -30,19 +30,19 @@ In order to use the robot with our driver you need to change the network setup o
 1. To setup the IP of the robot Press Exit on Initialization screen:
    ```eval_rst
    .. image:: ../img/configure_arm_1.jpg
-     :width: 400
+     :width: 600
      :align: center
    ```
    You should see the following screen:
    ```eval_rst
    .. image:: ../img/configure_arm_2.jpg
-     :width: 400
+     :width: 600
      :align: center
    ```
-2. Press the "Setup Robot" button:
+2. Press the "Setup Robot" button and you should see the following screen:
    ```eval_rst
    .. image:: ../img/configure_arm_3.jpg
-     :width: 400
+     :width: 600
      :align: center
    ```
 3. Then press the "Network" button. In this screen, you need to enable the network by clicking the "Static Address" radio button. Change the IP address and Subnet mask as shown below:
@@ -50,16 +50,69 @@ In order to use the robot with our driver you need to change the network setup o
    * Subnet mask: 255.255.255.0
    ```eval_rst
    .. image:: ../img/configure_arm_4.jpg
-     :width: 400
+     :width: 600
      :align: center
    ```
 4. Press "Apply" when you finish.
 
 #### Arm Calibration Procedure
-Follow this steps if you have 
-Start with hand not mounted on arm. Mount calibration stylus as shown below.
+Follow this steps if you have a table and a stylus provided by Shadow Robot.
 
-[TODO: port this confluence doc](https://shadowrobot.atlassian.net/wiki/spaces/SDSR/pages/98074625/Arm+Calibration+Procedure?atlOrigin=eyJpIjoiNGE0YmNlN2VhMDBlNGY5ZDk0OGIwNzg2NTAwOGZjNDkiLCJwIjoiYyJ9)
+1. The arm should be mounted on the table but without hand. First, mount the calibration stylus as shown below:
+
+   ```eval_rst
+   .. image:: ../img/arm_calibration_stylus.png
+     :width: 400
+     :align: center
+   ```
+2. Start arm with command:
+   ```sh
+   roslaunch sr_robot_launch sr_ur10arm_box.launch sim:=false
+   ```
+3. Set the payload with the following command:
+   ```sh
+   rosservice call /ra_sr_ur_robot_hw/set_payload "mass_kg: 0.0
+   centre_of_mass_m:
+    x: 0.0
+    y: 0.0
+    z: 0.0"
+    ```
+4. Then, change the control to `teach_mode` running the following:
+   ```sh
+   rosservice call /ra_sr_ur_robot_hw/set_teach_mode "teach_mode: true"
+   ```
+5. For each marker to be calibrated:
+   * Run:
+     ```sh
+     roslaunch sr_workspace_calibrator calibrator.launch [calibration_frame:=FRAME_NAME]
+     ```
+     * For multi marker setups, FRAME_NAME  should be unique. For a single marker setup (most cases), this can be omitted and the default name ra_calibration_marker will be used.
+     * Follow on screen instructions, touching carefully the tip of stylus into each hole. 
+       ```eval_rst
+       .. image:: ../img/arm_calibration_holes.png
+         :width: 400
+         :align: center
+       ```
+     
+       ```eval_rst
+       .. Note:: Hole 0 is nearest to arm base and numbers increase ANTI CLOCKWISE from 0.
+       ```
+       
+   * Repeat 10 times for each hole (0,1,3).    
+     
+     ```eval_rst
+     .. Note:: Hole 2 (shown in red) does not get probed.
+     ```
+  
+6. The output of the process will be a yaml file named FRAME_NAME.yaml stored in sr_workspace_calibrator/config
+
+If you want to use a existing calibration, a calibration tf can be broadcast by running:
+```sh
+roslaunch sr_workspace_calibrator calibration_tf.launch [calibration_frame:=FRAME_NAME]
+```
+
+As before, for single marker setups, FRAME_NAME can be omitted and the default ra_calibration_marker will be used. The launch command can of course also be included in other launch files.
+
 
 #### UR10 supporting firmware
 
