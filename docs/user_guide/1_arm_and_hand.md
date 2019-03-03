@@ -33,21 +33,25 @@ In order to use the robot with our driver you need to change the network setup o
      :width: 600
      :align: left
    ```
+   
    You should see the following screen:
    ```eval_rst
    .. image:: ../img/configure_arm_2.jpg
      :width: 600
      :align: left
    ```
+   
 2. Press the "Setup Robot" button and you should see the following screen:
    ```eval_rst
    .. image:: ../img/configure_arm_3.jpg
      :width: 600
      :align: left
    ```
+   
 3. Then press the "Network" button. In this screen, you need to enable the network by clicking the "Static Address" radio button. Change the IP address and Subnet mask as shown below:
    * IP address: 192.168.1.1
    * Subnet mask: 255.255.255.0
+   
    ```eval_rst
    .. image:: ../img/configure_arm_4.jpg
      :width: 600
@@ -65,22 +69,28 @@ Follow this steps if you have a table and a stylus provided by Shadow Robot.
      :width: 300
      :align: left
    ```
+   
 2. Start arm with command:
+   
    ```sh
    roslaunch sr_robot_launch sr_ur10arm_box.launch sim:=false
    ```
+   
 3. Set the payload with the following command:
+   
    ```sh
    rosservice call /ra_sr_ur_robot_hw/set_payload "mass_kg: 0.0
    centre_of_mass_m:
     x: 0.0
     y: 0.0
     z: 0.0"
-    ```
+   ```
+   
 4. Then, change the control to `teach_mode` running the following:
    ```sh
    rosservice call /ra_sr_ur_robot_hw/set_teach_mode "teach_mode: true"
    ```
+   
 5. For each marker to be calibrated:
    * Run:
      ```sh
@@ -91,7 +101,7 @@ Follow this steps if you have a table and a stylus provided by Shadow Robot.
        ```eval_rst
        .. image:: ../img/arm_calibration_holes.png
          :width: 300
-         :align: left
+         :align: center
        ```
      
        ```eval_rst
@@ -140,7 +150,7 @@ This will open Gazebo and Rviz with a robot in place:
 ```eval_rst
 .. image:: ../img/empty_world.png
   :width: 400
-  :align: left
+  :align: center
 ```
 In most cases, when one of Shadow's robot tables is used, the above command will suffice. However, the launch file can be run with multiple arguments. Arguments available for the launch file:
 * **start_home** - if set to `true`, robot will start in a predefined home pose. Default value: `true`
