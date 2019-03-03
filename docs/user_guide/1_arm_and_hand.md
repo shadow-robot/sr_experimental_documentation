@@ -5,7 +5,7 @@ This documentation describes the setup of a Shadow Dexterous Hand attached to a 
 ```eval_rst
 .. image:: ../img/UR10_hand_E.jpeg
   :width: 600
-  :align: center
+  :align: left
 ```
 
 ## Setting up the system 
@@ -31,19 +31,19 @@ In order to use the robot with our driver you need to change the network setup o
    ```eval_rst
    .. image:: ../img/configure_arm_1.jpg
      :width: 600
-     :align: center
+     :align: left
    ```
    You should see the following screen:
    ```eval_rst
    .. image:: ../img/configure_arm_2.jpg
      :width: 600
-     :align: center
+     :align: left
    ```
 2. Press the "Setup Robot" button and you should see the following screen:
    ```eval_rst
    .. image:: ../img/configure_arm_3.jpg
      :width: 600
-     :align: center
+     :align: left
    ```
 3. Then press the "Network" button. In this screen, you need to enable the network by clicking the "Static Address" radio button. Change the IP address and Subnet mask as shown below:
    * IP address: 192.168.1.1
@@ -51,7 +51,7 @@ In order to use the robot with our driver you need to change the network setup o
    ```eval_rst
    .. image:: ../img/configure_arm_4.jpg
      :width: 600
-     :align: center
+     :align: left
    ```
 4. Press "Apply" when you finish.
 
@@ -62,8 +62,8 @@ Follow this steps if you have a table and a stylus provided by Shadow Robot.
 
    ```eval_rst
    .. image:: ../img/arm_calibration_stylus.png
-     :width: 400
-     :align: center
+     :width: 300
+     :align: left
    ```
 2. Start arm with command:
    ```sh
@@ -90,8 +90,8 @@ Follow this steps if you have a table and a stylus provided by Shadow Robot.
      * Follow on screen instructions, touching carefully the tip of stylus into each hole. 
        ```eval_rst
        .. image:: ../img/arm_calibration_holes.png
-         :width: 400
-         :align: center
+         :width: 300
+         :align: left
        ```
      
        ```eval_rst
@@ -140,7 +140,7 @@ This will open Gazebo and Rviz with a robot in place:
 ```eval_rst
 .. image:: ../img/empty_world.png
   :width: 400
-  :align: center
+  :align: left
 ```
 In most cases, when one of Shadow's robot tables is used, the above command will suffice. However, the launch file can be run with multiple arguments. Arguments available for the launch file:
 * **start_home** - if set to `true`, robot will start in a predefined home pose. Default value: `true`
