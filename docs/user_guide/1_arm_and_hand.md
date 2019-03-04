@@ -35,6 +35,10 @@ In order to use the robot with our driver you need to change the network setup o
      :align: center
    ```
    
+     ```eval_rst
+    .. image:: ../img/configure_arm_1.jpg
+    ```
+   
    You should see the following screen:
    ```eval_rst
    .. image:: ../img/configure_arm_2.jpg
@@ -97,7 +101,7 @@ Follow this steps if you have a table and a stylus provided by Shadow Robot.
      ```sh
      roslaunch sr_workspace_calibrator calibrator.launch [calibration_frame:=FRAME_NAME]
      ```
-     * For multi marker setups, FRAME_NAME  should be unique. For a single marker setup (most cases), this can be omitted and the default name ra_calibration_marker will be used.
+     * For multi marker setups, `FRAME_NAME` should be unique. For a single marker setup (most cases), this can be omitted and the default name `ra_calibration_marker` will be used.
      * Follow on screen instructions, touching carefully the tip of stylus into each hole. 
        ```eval_rst
        .. image:: ../img/arm_calibration_holes.png
