@@ -121,7 +121,16 @@ As before, for single marker setups, FRAME_NAME can be omitted and the default r
 
 #### UR10 supporting firmware
 
-[TODO: port this confluence doc](https://shadowrobot.atlassian.net/wiki/spaces/SDSR/pages/371687449/UR10+Supported+firmware?atlOrigin=eyJpIjoiOTJhNmE0MzZmMzQyNDM0NmExMGUxODcxM2MyNzBkOTciLCJwIjoiYyJ9)
+In the following table, you can find the firmware version of the Universal Robot software and see it that has been tested and it is compatible with our software.
+
+| UR Software Version       | User Interface                    | Robot Controller                  | Safety Processor A | Safety Processor B | Hostname      | IP address  | s/n        | Tested?           |
+|---------------------------|-----------------------------------|-----------------------------------|--------------------|--------------------|---------------|-------------|------------|-------------------|
+| 3.3.4.310 (Dec 06 2016)   | PolyScope 3.3.4.310 (Dec 06 2016) | URControl 3.3.4.208 (Dec 06 2016) | URSafetyA 504      | URSafetyB 256      | ur-2017304270 | 192.168.1.1 | 2017304270 | Yes               |
+| 3.4                       |                                   |                                   |                    |                    |               |             |            | Not tested        |
+| 3.5                       |                                   |                                   |                    |                    |               |             |            | Not tested        |
+| 3.6                       |                                   |                                   |                    |                    |               |             |            | Yes in Serfow Lab |
+| 3.7.0.40195 (Aug 22 2018) |                                   |                                   | URSafetyA (3.5.2)  | URSafetyB (3.5.4)  | ur-2018300632 | 192.168.1.1 | 2018300632 | Yes               |
+| 3.7.2.40245 (Oct 05 2018) |                                   |                                   | URSafetyA (3.5.2)  | URSafetyB (3.5.4)  | ur-2018301419 | 192.168.1.1 | 2018301419 | Demo Room 1       |
 
 ### Setting up the hand
 
