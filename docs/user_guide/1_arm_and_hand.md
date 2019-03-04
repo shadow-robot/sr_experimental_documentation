@@ -340,21 +340,21 @@ Our code is split into different repositories:
 * [sr_visualization](https://github.com/shadow-robot/sr_visualization): This repository contains the various rqt_gui plugins we developed.
 * [sr_config](https://github.com/shadow-robot/sr_config): This repository contains the customer specific configuration for the Shadow Robot Hand.
 
-## Robot commander
+### Robot commander
 
 The robot commander provides a high level interface to easily control the different robots supported by Shadow Robot. It encapsulate the functionality provided by different ROS packages, specially the moveit_commander, enabling their access throughout a more simplified interface.
 
 There are three clases available:
 * [SrRobotCommander](https://github.com/shadow-robot/sr_interface/blob/kinetic-devel/sr_robot_commander/src/sr_robot_commander/sr_robot_commander.py): base class. Documentation can be found in the following [link](https://dexterous-hand.readthedocs.io/en/latest/user_guide/2_software_description.html#srrobotcommander).
-* [SrHandCommander](https://github.com/shadow-robot/sr_interface/blob/kinetic-devel/sr_robot_commander/src/sr_robot_commander/sr_hand_commander.py): hand management class  [link](https://dexterous-hand.readthedocs.io/en/latest/user_guide/2_software_description.html#srhandcommander).
+* [SrHandCommander](https://github.com/shadow-robot/sr_interface/blob/kinetic-devel/sr_robot_commander/src/sr_robot_commander/sr_hand_commander.py): hand management class. Documentation can be found in the following [link](https://dexterous-hand.readthedocs.io/en/latest/user_guide/2_software_description.html#srhandcommander).
 * [SrArmCommander](https://github.com/shadow-robot/sr_interface/blob/kinetic-devel/sr_robot_commander/src/sr_robot_commander/sr_arm_commander.py): hand management class
 
-### SrArmCommander
+#### SrArmCommander
 
 The SrArmCommander inherits all methods from the [robot commander](https://dexterous-hand.readthedocs.io/en/latest/user_guide/2_software_description.html#srrobotcommander) and provides commands specific to the arm. It allows movement to a certain position in cartesian space, to a configuration in joint space
 or move using certain trajectory.
 
-#### Setup
+##### Setup
 ```eval_rst
 Import the arm commander along with basic rospy libraries and the arm finder:
 
@@ -384,7 +384,7 @@ Use the ArmFinder to get the parameters (such as prefix) and joint names of the 
    arm_finder.get_arm_joints()
 ```
 
-#### Getting basic information
+##### Getting basic information
 ```eval_rst
 To return the reference frame for planning in cartesian space:
 
@@ -393,7 +393,7 @@ To return the reference frame for planning in cartesian space:
    reference_frame = arm_commander.get_pose_reference_frame()
 ```
 
-#### Plan/move to a position target
+##### Plan/move to a position target
 ```eval_rst
 Using the method ``move_to_position_target``, the end effector of the arm can be moved to a certain point
 in space represented by (x, y, z) coordinates. The orientation of the end effector can take any value.
@@ -406,7 +406,7 @@ Parameters:
 -  *wait*  indicates if the method should wait for the movement to end or not
    (default value is True)
 ```
-##### Example
+###### Example
 ```eval_rst
 
 .. code:: python
@@ -423,7 +423,7 @@ Parameters:
    arm_commander.move_to_position_target(new_position)
 ```
 
-#### Plan/move to a pose target
+##### Plan/move to a pose target
 ```eval_rst
 Using the method ``move_to_pose_target`` allows the end effector of the arm to be moved to a certain pose
 (position and orientation) in the space represented by (x, y, z, rot\_x,
@@ -439,7 +439,7 @@ Parameters:
 -  *wait* indicates if the method should wait for the movement to end or not
    (default value is True)
 ```
-##### Example
+###### Example
 ```eval_rst
 
 .. code:: python
