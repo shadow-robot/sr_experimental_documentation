@@ -95,9 +95,9 @@ Follow this steps if you have a table and a stylus provided by Shadow Robot.
        .. image:: ../img/arm_calibration_holes.png
          :width: 300
          :align: center
-         
-        |
        ```
+       
+       <br>
      
        ```eval_rst
        .. Note:: Hole 0 is nearest to arm base and numbers increase ANTI CLOCKWISE from 0.
