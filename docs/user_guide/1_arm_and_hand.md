@@ -325,13 +325,144 @@ Then, inside the container, launch the arm and hand by running:
 roslaunch sr_robot_launch sr_right_ur10arm_hand.launch
 ```
 
-## Creating a new world/scene
+## Software description
+
+Check the `Software description` section in the [Dexterous Hand Documentation](https://dexterous-hand.readthedocs.io/en/latest/user_guide/2_software_description.html#), as it contains important information of all the software available for the hand.
+
+### Repositories
+
+Our code is split into different repositories:
+
+* [sr_common](https://github.com/shadow-robot/sr_common): This repository contains the bare minimum for communicating with the Shadow Hand from a remote computer (urdf models and messages).
+* [sr_core](https://github.com/shadow-robot/sr_core): These are the core packages for the Shadow Robot hardware and simulation.
+* [sr_interface](https://github.com/shadow-robot/sr_interface): This repository contains the high level interface and its dependencies for interacting simply with our robots.
+* [sr_tools](https://github.com/shadow-robot/sr_tools): This repository contains more advanced tools that might be needed in specific use cases.
+* [sr_visualization](https://github.com/shadow-robot/sr_visualization): This repository contains the various rqt_gui plugins we developed.
+* [sr_config](https://github.com/shadow-robot/sr_config): This repository contains the customer specific configuration for the Shadow Robot Hand.
+
+## Robot commander
+
+The robot commander provides a high level interface to easily control the different robots supported by Shadow Robot. It encapsulate the functionality provided by different ROS packages, specially the moveit_commander, enabling their access throughout a more simplified interface.
+
+There are three clases available:
+* [SrRobotCommander](https://github.com/shadow-robot/sr_interface/blob/kinetic-devel/sr_robot_commander/src/sr_robot_commander/sr_robot_commander.py): base class. Documentation can be found in the following [link](https://dexterous-hand.readthedocs.io/en/latest/user_guide/2_software_description.html#srrobotcommander).
+* [SrHandCommander](https://github.com/shadow-robot/sr_interface/blob/kinetic-devel/sr_robot_commander/src/sr_robot_commander/sr_hand_commander.py): hand management class  [link](https://dexterous-hand.readthedocs.io/en/latest/user_guide/2_software_description.html#srhandcommander).
+* [SrArmCommander](https://github.com/shadow-robot/sr_interface/blob/kinetic-devel/sr_robot_commander/src/sr_robot_commander/sr_arm_commander.py): hand management class
+
+### SrArmCommander
+
+The SrArmCommander inherits all methods from the [robot commander](https://dexterous-hand.readthedocs.io/en/latest/user_guide/2_software_description.html#srrobotcommander) and provides commands specific to the arm. It allows movement to a certain position in cartesian space, to a configuration in joint space
+or move using certain trajectory.
+
+#### Setup
+```eval_rst
+Import the arm commander along with basic rospy libraries and the arm finder:
+
+.. code:: python
+
+    import rospy
+    from sr_robot_commander.sr_arm_commander import SrArmCommander
+    from sr_utilities.arm_finder import ArmFinder
+
+The constructors for ``SrArmCommander`` take a name parameter that should match the group name of the robot to be used and has the option to add ground to the scene.
+
+.. code:: python
+
+   arm_commander = SrArmCommander(name="right_arm", set_ground=True)
+   
+Use the ArmFinder to get the parameters (such as prefix) and joint names of the arm currently running on the system:
+
+.. code:: python
+
+   arm_finder = ArmFinder()
+   
+   # To get the prefix or mapping of the arm joints. Mapping is the same as prefix but without underscore.
+   arm_finder.get_arm_parameters().joint_prefix.values()
+   arm_finder.get_arm_parameters().mapping.values()
+   
+   # To get the arm joints
+   arm_finder.get_arm_joints()
+```
+
+#### Getting basic information
+```eval_rst
+To return the reference frame for planning in cartesian space:
+
+.. code:: python
+
+   reference_frame = arm_commander.get_pose_reference_frame()
+```
+
+#### Plan/move to a position target
+```eval_rst
+Using the method ``move_to_position_target``, the end effector of the arm can be moved to a certain point
+in space represented by (x, y, z) coordinates. The orientation of the end effector can take any value.
+
+Parameters:
+
+-  *xyz* desired position of end-effector
+-  *end\_effector\_link* name of the end effector link (default value is
+   empty string)
+-  *wait*  indicates if the method should wait for the movement to end or not
+   (default value is True)
+```
+##### Example
+```eval_rst
+
+.. code:: python
+
+   rospy.init_node("robot_commander_examples", anonymous=True)
+   arm_commander = SrArmCommander(name="right_arm", set_ground=True)
+
+   new_position = [0.25527, 0.36682, 0.5426]
+    
+   # To only plan
+   arm_commander.plan_to_position_target(new_position)
+    
+   # To plan and move
+   arm_commander.move_to_position_target(new_position)
+```
+
+#### Plan/move to a pose target
+```eval_rst
+Using the method ``move_to_pose_target`` allows the end effector of the arm to be moved to a certain pose
+(position and orientation) in the space represented by (x, y, z, rot\_x,
+rot\_y, rot\_z).
+
+Parameters:
+
+-  *pose* desired pose of end-effector: a Pose message, a PoseStamped
+   message or a list of 6 floats: [x, y, z, rot\_x, rot\_y, rot\_z] or a
+   list of 7 floats [x, y, z, qx, qy, qz, qw]
+-  *end\_effector\_link* name of the end effector link (default value is
+   empty string)
+-  *wait* indicates if the method should wait for the movement to end or not
+   (default value is True)
+```
+##### Example
+```eval_rst
+
+.. code:: python
+
+   rospy.init_node("robot_commander_examples", anonymous=True)
+   arm_commander = SrArmCommander(name="right_arm", set_ground=True)
+
+   new_pose = [0.5, 0.3, 1.2, 0, 1.57, 0]
+   
+   # To only plan
+   arm_commander.plan_to_pose_target(new_pose)
+   
+   # To plan and move
+   arm_commander.move_to_pose_target(new_pose)
+
+```
+### Creating a new world/scene
 
 In this section, instructions on how to create, modify and save new `.world` and `.scene` file are provided. All the necessary console commands are described in depth, however, it is recommended that the user uses graphical user interface introduced at the end of this section.
 
-### Using console commands
+#### Using console commands
 
-#### Running template world file
+##### Running template world file
 
 In order to start creating a new world file, first you need to run a launch file with a template world file, i.e.:
 
@@ -357,7 +488,7 @@ As an example, a launch file starting with robot NOT in home position with a bas
 roslaunch sr_world_generator create_world_template.launch start_home:=false initial_z:=0.5
 ```
 
-#### Adding objects to the world
+##### Adding objects to the world
 
 In order to add existing object to the world, navigate to the left hand side bar in Gazebo and click on the **Insert** tab:
 
@@ -411,7 +542,7 @@ It is also possible to set the specific pose of the object in the pose field. Yo
 
 A video depicting the process described above can by found [here](https://drive.google.com/file/d/1bm6PckbXbUY9ELF_6f4LWAIdXbkIZnQ1/view?usp=sharing).
 
-#### Creating new objects
+##### Creating new objects
 
 It is possible to create new object types from both meshes and primitives. First, an object needs to be placed in the scene. You can either drag a mesh that you want to modify as described above or use one of the available primitives that you can see at the top of the panel:
 
@@ -459,7 +590,7 @@ As mentioned before, the same process (dimension change and saving) can be used 
 
 A video depicting the process described above can by found [here](https://drive.google.com/file/d/1yoLMEdtsf-U4bimTCqofrLLD3mPABT-9/view?usp=sharing).
 
-#### Generating proper world file
+##### Generating proper world file
 
 When all the models are inserted in the scene and placed in desired position, the world file can be saved. Go to **File → Save World As** and select a name and a path of a world file saved with gazebo. Make sure to remember the path to the file. Recommend path is just `/home/user`. Although the file has now been saved, it has to be modified before being used by our launch files. In order to modify it, first kill the currently running Gazebo launch file and run:
 
@@ -473,7 +604,7 @@ where:
 
 When a message `World saved!` will appear in the console, kill the launch file. Your world has now been saved in `sr_description_common` package (`worlds` folder) and is ready to be used.
 
-#### Creating a scene file
+##### Creating a scene file
 
 In order to generate a scene file for collision scene used in non-simulated scenarios, first, run the initial launch file with the just created world file passed to the `world` argument:
 
@@ -493,7 +624,7 @@ and click **Export As Text**. A pop-up window will appear asking for a name and 
 
 A video depicting the process described above can by found [here](https://drive.google.com/file/d/1Uv1MeC2xc1nZ8Ati1cKaegHN8LJzsyhM/view?usp=sharing).
 
-### Using the graphical user interface
+###v Using the graphical user interface
 
 A GUI has been implemented to help with the above operations.
 
