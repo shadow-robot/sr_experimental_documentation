@@ -8,7 +8,7 @@ This documentation describes the setup of a Shadow Dexterous Hand attached to a 
   :align: left
 ```
 
-## Setting up the system 
+## Setting up a real system 
 
 ### Setting up the arm
 
@@ -123,9 +123,207 @@ As before, for single marker setups, FRAME_NAME can be omitted and the default r
 
 [TODO: port this confluence doc](https://shadowrobot.atlassian.net/wiki/spaces/SDSR/pages/371687449/UR10+Supported+firmware?atlOrigin=eyJpIjoiOTJhNmE0MzZmMzQyNDM0NmExMGUxODcxM2MyNzBkOTciLCJwIjoiYyJ9)
 
-### Mounting the hand
+### Setting up the hand
+
+#### What's in the box?
+
+```eval_rst
+=========================   ===========================================================
+Item                        Description
+=========================   ===========================================================
+Shadow Hand E2M3 or E2PT    Hand Unit
+PC                          Host PC control unit for the hand
+PSU for Hand                48v for motor hand
+Kettle Leads                To connect power supplies to mains
+Power Cable                 4-pin Large Lemo connector, already fitted to the hand
+EtherCAT Extension Cable    50cm EtherCAT extension lead, already fitted to the Hand
+Calibration Jigs            Bag containing calibration jigs for all joints
+Toolbox                     Contains hex drivers to perform required maintenance
+User Manual                 This document
+=========================   ===========================================================
+```
+
+#### Connecting Cables
+There are two ways to connect the EtherCAT and power cables to the hand.
+
+##### External connections
+If your hand already has cables fitted, then you can simply connect the EtherCAT and power connectors immediately.
+![Connecting cables](../img/connecting_cables_external.png)
+
+**EtherCAT**: Connect the Ethernet cable to the hand's Ethernet socket, and connect the other end to the PC's second
+Ethernet port. **If you have a Bi-manual system, connect the Left and Right hands correctly to the labelled ports.**
+You have been supplied with a medium length Ethernet lead, but if you require a longer or shorter one, you can simply use a standard commercial Ethernet Cat 5 cable, available from most computer parts suppliers.
+
+**Power**: Connect the external power supply to the hand using the metal Lemo connector, making sure to line up the red dots. If you require a longer or shorter cable, please contact the Shadow Robot Company.
+
+##### Internal connections
+If you are connecting the hand to a robot with internal cabling, then you may wish to use the internal connectors.
+Turn the hand over, and use the orange and green hex drivers to remove the connector cover. Connect the two cables to their relevant sockets. Now affix the hand to the robot arm.
+![Connecting cables](../img/connecting_cables_internal.png)
+
+#### Mounting the hand
+
+Use the elbow adaptor plate supplied to adapt the Hand to the UR robot arm and mount the hand.
+
+#### Powering up
+
+You can power up the hand and PC in any order. You do not have to power up one before the other. When power is applied to the hand, the fans will be heard immediately.
+
+##### Lights
+
+On power up, the lights will be in the following state
+
+```eval_rst
+=======================   =============       ================    =================================
+Item                      Color               Activity            Meaning
+=======================   =============       ================    =================================
+Power LEDs                White               On                  Power good
+EC Link Active            Green               On                  EtherCAT link established
+EC Link Error             Red                 Off                 No EtherCAT link error
+Run                       Green               Off                 Hand is in Init state
+Application Layer Error   Red                 On (during boot)    Verifying ET1200 EEPROM
+Application Layer Error   Red                 Then off            No EtherCAT packet error
+ET1200 chip select        Yellow              On                  PIC32 communicating with ET1200
+=======================   =============       ================    =================================
+```
+
+Lights will also appear inside the base, indicating 5v, 6v and 24v (or 28v) supplies. These can only be seen by removing the covers.
+
+##### Jiggling
+
+This applies to the motor hand only. On reset, all of the strain gauges (torque sensors) in the
+motors need to be zeroed. This happens automatically. The motors are driven back and forth
+to try to relieve any tension on the tendons. Then both gauges are zeroed. You will therefore
+see all joints of the hand move slightly on power up or reset or power up.
 
 
+## Installing the software
+
+We have created a one-liner that is able to install Docker, download the image and create a new container for you. It will also create two desktop icons, one to start the container and launch the hand and another one to save the log files locally. To use it, you first need to have a PC with Ubuntu installed on it (preferable version 16.04) then follow these steps:
+
+* **Check your hand interface ID**:
+
+  Before setting up the docker container, the EtherCAT interface ID for the hand needs to be discovered. In order to do so, after plugging the hand’s ethernet cable into your machine and powering it up, please run
+
+  ```bash
+  $ sudo dmesg
+  ```
+  command in the console. At the bottom, there will be information similar to the one below:
+
+  ```bash
+  [490.757853] IPv6: ADDRCONF(NETDEV_CHANGE): enp0s25: link becomes ready
+  ```
+  In the above example, ‘enp0s25’ is the interface ID that is needed.
+
+* **Get ROS Upload login credentials**
+
+  If you want to upload technical logged data (ROS logs, backtraces, crash dumps etc.) to our server and notify the Shadow's software team to investigate your bug then you need to enable logs uploading in the one-liner. In order to use this option you need to obtain a unique upload key by emailing sysadmin@shadowrobot.com. When you receive the key you can use it when running the one-liner installation tool. To enable the logs uploading you need to add the command line option ```-ck true``` to the one-liner.
+  After executing the one-liner, it will prompt you to enter your upload key and press enter to continue. Please copy and paste your key from the email you received by Shadow Robot.
+
+* **Check your hand configuration branch**:
+
+  You should have the name of your [sr_config](https://github.com/shadow-robot/sr-config) hand branch which contains the specific configuration of your hand (calibration, controller tuning etc…).
+  Usually it is something like this: ``shadowrobot_XXXXXX``. Where XXXXXX are the 6 digits contained in the serial number of the hand labelled underneath the robot base.
+
+  If you are unsure please contact us.
+
+* **Run the one-liner**:
+
+  The one-liner will install Docker, pull the image from Docker Hub, and create and run a container with the parameters specified. In order to use it, use the following command:
+
+  **Please remember to replace [EtherCAT interface ID] with your Interface ID and [sr_config_branch] with your unique sr_config branch**
+
+  ROS Kinetic (Recommended):
+  ```bash
+  $ bash <(curl -Ls http://bit.ly/launch-sh) -i shadowrobot/dexterous-hand:kinetic-release -n arm-and-hand -sn Arm_Hand_Launcher -e [EtherCAT interface ID] -b [sr_config_branch] -l false
+  ```
+  Examples:
+  For Interface ID ```ens0s25``` and sr_config_branch ```shadow_12345```
+  ```bash
+  $ bash <(curl -Ls http://bit.ly/launch-sh) -i shadowrobot/dexterous-hand:kinetic-release -n arm-and-hand -sn Arm_Hand_Launcher -e ens0s25 -b shadow_12345 -l false
+  ```  
+  Same as above but with ROS logs upload enabled
+  ```bash
+  $ bash <(curl -Ls http://bit.ly/launch-sh) -i shadowrobot/dexterous-hand:kinetic-release -n arm-and-hand -sn Hand_Launcher -e ens0s25 -b shadow_12345  -l false -ck true 
+  ```  
+  
+  If you have an Nvidia graphics card, you can add -nv to set the nvidia-docker version. Use ``-nv 1`` or ``-nv 2`` for version 1.0 or 2.0 respectively. Must be used with ``-g true``.
+
+  You can also add -r true in case you want to reinstall the docker image and container. When it finishes it will show:
+  ```bash
+  Operation completed
+  ```
+  and it will create two desktop icons on your desktop that you can double-click to launch the system or save the log files from the active containers to your desktop.
+
+## Saving log files and uploading data to our server
+When running the one-liner, you will also notice a second icon named `Save logs` that is used to retrieve and copy all the available logs files from the active containers locally on your Desktop. This icon will create a folder that matches the active container's name and the next level will include the date and timestamp it was executed. When it starts, it will prompt you if you want to continue, as by pressing yes it will close all active containers. After pressing "yes", you will have to enter a description of the logging event and will start coping the bag files, logs and configuration files from the container and then exit. Otherwise, the window will close and no further action will happen. If you provided an upload key with the one-liner installation then the script will also upload your LOGS in compressed format to our server and notify the Shadow's software team about the upload. This will allow the team to fully investigate your issue and provide support where needed.
+
+### Starting the driver
+
+* **Shadow Arm and Hand Driver**
+  Launch the driver at a terminal (in the container), typing:
+
+  ```bash
+  $ roslaunch sr_ethercat_hand_config sr_system.launch
+  ```
+
+* **Lights in the hand**:
+  When the ROS driver is running you should see the following lights on the Palm:
+
+  ```eval_rst
+  ========================   =============       ================    =================================
+  Light                      Colour              Activity            Meaning
+  ========================   =============       ================    =================================
+  Run                        Green               On                  Hand is in Operational state
+  CAN1/2 Transmit            Blue                V.fast flicker      Demand values are being sent to the motors
+  CAN1/2 Receive             Blue                V.fast flicker      Motors are sending sensor data
+  Joint sensor chip select   Yellow              On                  Sensors being sampled
+  ========================   =============       ================    =================================
+  ```
+
+  After killing the driver, the lights will be in a new state:
+  ```eval_rst
+  ========================   =============       ================    =================================
+  Light                      Colour              Activity            Meaning
+  ========================   =============       ================    =================================
+  Run                        Green               Blinking            Hand is in Pre-Operational state
+  CAN1/2 Transmit            Blue                Off                 No messages transmitted on CAN 1/2
+  CAN1/2 Receive             Blue                Off                 No messages received on CAN 1/2
+  Joint sensor chip select   Yellow              Off                 Sensors not being sampled
+  ========================   =============       ================    =================================
+  ```
+
+## Setting up a simulated system 
+
+### Gazebo
+
+[Gazebo](http://gazebosim.org/) is our default simultator. So follow the intructions on the next section to install and run a simulation of our robot hands using Gazebo.
+
+#### Installing the software (sim)
+
+If you do not actually have a real hand and arm but would like to use them in simulation, then please run the following command:
+
+ROS Kinetic (Recommended):
+```bash
+$ bash <(curl -Ls http://bit.ly/launch-sh) -i shadowrobot/dexterous-hand:kinetic-release -n arm-and-hand -sn Arm_Hand_Container -b kinetic_devel -e eth0 -l false
+```
+
+You can also add -r true in case you want to reinstall the docker image and container. When it finishes it will show:
+```bash
+Operation completed
+```
+and it will create two icons on your desktop that you can double-click to launch the container with the system or save the log files.
+
+#### Starting a robot in simulation
+
+First you need to start the system container by either doble clicking the icon "Arm_Hand_Container" or running the following command:
+```bash
+$ docker start arm-and-hand
+```
+Then, inside the container, launch the arm and hand by running:
+```bash
+roslaunch sr_robot_launch sr_right_ur10arm_hand.launch
+```
 
 ## Creating a new world/scene
 
