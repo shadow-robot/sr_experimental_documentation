@@ -31,26 +31,16 @@ In order to use the robot with our driver you need to change the network setup o
 
    ```eval_rst
    .. image:: ../img/configure_arm_1.jpg
-     :width: 600
-     :align: center
    ```
-   
-     ```eval_rst
-    .. image:: ../img/configure_arm_1.jpg
-    ```
    
    You should see the following screen:
    ```eval_rst
    .. image:: ../img/configure_arm_2.jpg
-     :width: 600
-     :align: center
    ```
    
 2. Press the "Setup Robot" button and you should see the following screen:
    ```eval_rst
    .. image:: ../img/configure_arm_3.jpg
-     :width: 600
-     :align: center
    ```
    
 3. Then press the "Network" button. In this screen, you need to enable the network by clicking the "Static Address" radio button. Change the IP address and Subnet mask as shown below:
@@ -59,8 +49,6 @@ In order to use the robot with our driver you need to change the network setup o
    
    ```eval_rst
    .. image:: ../img/configure_arm_4.jpg
-     :width: 600
-     :align: center
    ```
 4. Press "Apply" when you finish.
 
@@ -71,7 +59,7 @@ Follow this steps if you have a table and a stylus provided by Shadow Robot.
 
    ```eval_rst
    .. image:: ../img/arm_calibration_stylus.png
-     :width: 300
+     :width: 200
      :align: center
    ```
    
@@ -107,6 +95,8 @@ Follow this steps if you have a table and a stylus provided by Shadow Robot.
        .. image:: ../img/arm_calibration_holes.png
          :width: 300
          :align: center
+         
+        |
        ```
      
        ```eval_rst
