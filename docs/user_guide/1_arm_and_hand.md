@@ -197,7 +197,7 @@ to try to relieve any tension on the tendons. Then both gauges are zeroed. You w
 see all joints of the hand move slightly on power up or reset or power up.
 
 
-## Installing the software
+### Installing the software
 
 We have created a one-liner that is able to install Docker, download the image and create a new container for you. It will also create two desktop icons, one to start the container and launch the hand and another one to save the log files locally. To use it, you first need to have a PC with Ubuntu installed on it (preferable version 16.04) then follow these steps:
 
@@ -255,7 +255,7 @@ We have created a one-liner that is able to install Docker, download the image a
   ```
   and it will create two desktop icons on your desktop that you can double-click to launch the system or save the log files from the active containers to your desktop.
 
-## Saving log files and uploading data to our server
+### Saving log files and uploading data to our server
 When running the one-liner, you will also notice a second icon named `Save logs` that is used to retrieve and copy all the available logs files from the active containers locally on your Desktop. This icon will create a folder that matches the active container's name and the next level will include the date and timestamp it was executed. When it starts, it will prompt you if you want to continue, as by pressing yes it will close all active containers. After pressing "yes", you will have to enter a description of the logging event and will start coping the bag files, logs and configuration files from the container and then exit. Otherwise, the window will close and no further action will happen. If you provided an upload key with the one-liner installation then the script will also upload your LOGS in compressed format to our server and notify the Shadow's software team about the upload. This will allow the team to fully investigate your issue and provide support where needed.
 
 ### Starting the driver
