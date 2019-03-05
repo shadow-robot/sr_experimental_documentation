@@ -26,7 +26,7 @@ To quickly start up the robot after it has been installed, perform the following
 
 #### Configuring the network
 
-In order to use the robot with our driver you need to change the network setup of the robot via the pedant, performing the following steps:
+In order to use the robot with our driver you need to change the network setup of the robot via the pendant, performing the following steps:
 1. To setup the IP of the robot Press Exit on Initialization screen:
 
    ```eval_rst
@@ -53,7 +53,7 @@ In order to use the robot with our driver you need to change the network setup o
 4. Press "Apply" when you finish.
 
 #### Arm Calibration Procedure
-Follow this steps if you have a table and a stylus provided by Shadow Robot.
+Follow these steps if you have a table and a stylus provided by Shadow Robot:
 
 1. The arm should be mounted on the table but without hand. First, mount the calibration stylus as shown below:
 
@@ -646,7 +646,7 @@ A GUI has been implemented to help with the above operations.
  In order to start it, make sure no Gazebo sessions are up and run:
 
 ```sh
-roslaunch sr_world_generator world_generator_gui.lauch
+roslaunch sr_world_generator world_generator_gui.launch
 ```
 
 In order to start a new Gazebo session set following parameters to your preference:
