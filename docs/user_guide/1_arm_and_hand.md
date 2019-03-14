@@ -10,12 +10,30 @@ This documentation describes the setup of a Shadow Dexterous Hand attached to a 
 
 ## Setting up a real system 
 
+### Setting up the table (If you have a table provided by Shadow)
+Unpack the demo table and assemble it as per the instructions [here](https://docs.google.com/document/d/1q7asK4RDGCPR3rHt41VwS1oK7yD3LbegnAYJhy3luhU/edit).
+
+```eval_rst
+.. image:: ../img/demo_table.png
+```
+
+If you don't have a table provided by Shadow, it should be sturdy surface strong enough to withstand at least 10 times the arm's weight.
+
 ### Setting up the arm
 
 1. Unpack the robot arm and the control box.
-2. Mount the robot on a sturdy surface strong enough to withstand at least 10 times its weight.
-3. Place the control box on its foot.
+2. Mount the arm on the table. If you have a demo table, the cable socket should point roughly towards the wire hole in the table. Place the base of the robot onto the mounting plate and add screws from the top. 
+   ```eval_rst
+   .. image:: ../img/ur_position_on_table.png
+   ```
+3. Place the control box on its foot and under the table so its not trip hazard.
+   ```eval_rst
+   .. image:: ../img/ur10_control_box.jpg
+   ```
 4. Plug on the robot cable between the robot and the control box.
+   ```eval_rst
+   .. image:: ../img/ur10_control_box.jpg
+   ```
 5. Plug in the mains plug of the control box.
 
 To quickly start up the robot after it has been installed, perform the following steps:
@@ -53,7 +71,7 @@ In order to use the robot with our driver you need to change the network setup o
 4. Press "Apply" when you finish.
 
 #### Arm Calibration Procedure
-Follow these steps if you have a table and a stylus provided by Shadow Robot. It should only be ran once when the table is setup for the first time).
+Follow these steps if you have a table and a stylus provided by Shadow Robot. It should only be ran once when the table is setup for the first time.
 
 1. The arm should be mounted on the table but without hand. First, mount the calibration stylus as shown below:
 
@@ -127,21 +145,14 @@ As before, for single marker setups, FRAME_NAME can be omitted and the default r
 In the following table, you can find the firmware version of the Universal Robot software and see if it has been tested with our software:
 
 ```eval_rst
-+---------------------------+-----------------------------------+-----------------------------------+--------------------+--------------------+---------------+-------------+------------+-------------------+
-| UR Software Version       | User Interface                    | Robot Controller                  | Safety Processor A | Safety Processor B | Hostname      | IP address  | s/n        | Tested?           |
-+---------------------------+-----------------------------------+-----------------------------------+--------------------+--------------------+---------------+-------------+------------+-------------------+
-| 3.3.4.310 (Dec 06 2016)   | PolyScope 3.3.4.310 (Dec 06 2016) | URControl 3.3.4.208 (Dec 06 2016) | URSafetyA 504      | URSafetyB 256      | ur-2017304270 | 192.168.1.1 | 2017304270 | Yes               |
-+---------------------------+-----------------------------------+-----------------------------------+--------------------+--------------------+---------------+-------------+------------+-------------------+
-| 3.4                       |                                   |                                   |                    |                    |               |             |            | Not tested        |
-+---------------------------+-----------------------------------+-----------------------------------+--------------------+--------------------+---------------+-------------+------------+-------------------+
-| 3.5                       |                                   |                                   |                    |                    |               |             |            | Not tested        |
-+---------------------------+-----------------------------------+-----------------------------------+--------------------+--------------------+---------------+-------------+------------+-------------------+
-| 3.6                       |                                   |                                   |                    |                    |               |             |            | Yes in Serfow Lab |
-+---------------------------+-----------------------------------+-----------------------------------+--------------------+--------------------+---------------+-------------+------------+-------------------+
-| 3.7.0.40195 (Aug 22 2018) |                                   |                                   | URSafetyA (3.5.2)  | URSafetyB (3.5.4)  | ur-2018300632 | 192.168.1.1 | 2018300632 | Yes               |
-+---------------------------+-----------------------------------+-----------------------------------+--------------------+--------------------+---------------+-------------+------------+-------------------+
-| 3.7.2.40245 (Oct 05 2018) |                                   |                                   | URSafetyA (3.5.2)  | URSafetyB (3.5.4)  | ur-2018301419 | 192.168.1.1 | 2018301419 | Demo Room 1       |
-+---------------------------+-----------------------------------+-----------------------------------+--------------------+--------------------+---------------+-------------+------------+-------------------+
+| UR Software Version       | User Interface                    | Robot Controller                  | Safety Processor A | Safety Processor B | Hostname      | IP address  | s/n        | Tested?                                                                                                                                                                             |
+|---------------------------|-----------------------------------|-----------------------------------|--------------------|--------------------|---------------|-------------|------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 3.3.4.310 (Dec 06 2016)   | PolyScope 3.3.4.310 (Dec 06 2016) | URControl 3.3.4.208 (Dec 06 2016) | URSafetyA 504      | URSafetyB 256      | ur-2017304270 | 192.168.1.1 | 2017304270 | `Yes <https://shadowrobot.atlassian.net/projects/SRC?selectedItem=com.atlassian.plugins.atlassian-connect-plugin:com.kanoah.test-manager__main-project-page#!/testPlayer/SRC-R82>`_ |
+| 3.4                       |                                   |                                   |                    |                    |               |             |            | Not tested                                                                                                                                                                          |
+| 3.5                       |                                   |                                   |                    |                    |               |             |            | Not tested                                                                                                                                                                          |
+| 3.6                       |                                   |                                   |                    |                    |               |             |            | Yes in Serfow Lab                                                                                                                                                                   |
+| 3.7.0.40195 (Aug 22 2018) |                                   |                                   | URSafetyA (3.5.2)  | URSafetyB (3.5.4)  | ur-2018300632 | 192.168.1.1 | 2018300632 | `Yes <https://shadowrobot.atlassian.net/projects/SRC?selectedItem=com.atlassian.plugins.atlassian-connect-plugin:com.kanoah.test-manager__main-project-page#!/testPlayer/SRC-R83>`_ |
+| 3.7.2.40245 (Oct 05 2018) |                                   |                                   | URSafetyA (3.5.2)  | URSafetyB (3.5.4)  | ur-2018301419 | 192.168.1.1 | 2018301419 | Demo Room 1                                                                                                                                                                         |
 ```
 
 ### Setting up the hand
