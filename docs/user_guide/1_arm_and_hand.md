@@ -53,7 +53,7 @@ In order to use the robot with our driver you need to change the network setup o
 4. Press "Apply" when you finish.
 
 #### Arm Calibration Procedure
-Follow these steps if you have a table and a stylus provided by Shadow Robot:
+Follow these steps if you have a table and a stylus provided by Shadow Robot. It should only be ran once when the table is setup for the first time).
 
 1. The arm should be mounted on the table but without hand. First, mount the calibration stylus as shown below:
 
@@ -62,14 +62,16 @@ Follow these steps if you have a table and a stylus provided by Shadow Robot:
      :width: 200
      :align: center
    ```
+
+2. Attach the ar_marker base to the table without the markers on
    
-2. Start arm with command:
+3. Type CTRL+ALT+T to open a terminal and start arm with command:
    
    ```sh
    roslaunch sr_robot_launch sr_ur10arm_box.launch sim:=false
    ```
    
-3. Set the payload with the following command:
+4. Open another terminal (CTRL+ALT+T) and set the payload with the following command:
    
    ```sh
    rosservice call /ra_sr_ur_robot_hw/set_payload "mass_kg: 0.0
@@ -79,12 +81,13 @@ Follow these steps if you have a table and a stylus provided by Shadow Robot:
     z: 0.0"
    ```
    
-4. Then, change the control to `teach_mode` running the following:
+5. Then, in the same terminal, change the control to `teach_mode` running the following:
    ```sh
-   rosservice call /ra_sr_ur_robot_hw/set_teach_mode "teach_mode: true"
+   rosservice call /teach_mode "teach_mode: 1 robot: 'right_arm'"
    ```
-   
-5. For each marker to be calibrated:
+   Now you should be able to move the arm freely
+
+6. For each marker to be calibrated:
    * Run:
      ```sh
      roslaunch sr_workspace_calibrator calibrator.launch [calibration_frame:=FRAME_NAME]
@@ -109,7 +112,7 @@ Follow these steps if you have a table and a stylus provided by Shadow Robot:
      .. Note:: Hole 2 (shown in red) does not get probed.
      ```
   
-6. The output of the process will be a yaml file named FRAME_NAME.yaml stored in sr_workspace_calibrator/config
+7. The output of the process will be a yaml file named FRAME_NAME.yaml stored in sr_workspace_calibrator/config
 
 If you want to use a existing calibration, a calibration tf can be broadcast by running:
 ```sh
