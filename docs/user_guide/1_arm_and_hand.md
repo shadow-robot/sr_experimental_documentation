@@ -32,7 +32,7 @@ If you don't have a table provided by Shadow, it should be sturdy surface strong
    ```
 4. Plug on the robot cable between the robot and the control box.
    ```eval_rst
-   .. image:: ../img/ur10_control_box.jpg
+   .. image:: ../img/ur10_control_box_cables.jpg
    ```
 5. Plug in the mains plug of the control box.
 
@@ -132,13 +132,18 @@ Follow these steps if you have a table and a stylus provided by Shadow Robot. It
   
 7. The output of the process will be a yaml file named FRAME_NAME.yaml stored in sr_workspace_calibrator/config
 
+8. Finally to finish, change the control back running the following command:
+   ```sh
+   rosservice call /teach_mode "teach_mode: 0 robot: 'right_arm'"
+   ```
+   Now you should not be able to move the arm
+
 If you want to use a existing calibration, a calibration tf can be broadcast by running:
 ```sh
 roslaunch sr_workspace_calibrator calibration_tf.launch [calibration_frame:=FRAME_NAME]
 ```
 
 As before, for single marker setups, FRAME_NAME can be omitted and the default ra_calibration_marker will be used. The launch command can of course also be included in other launch files.
-
 
 #### UR10 supporting firmware
 
