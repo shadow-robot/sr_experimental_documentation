@@ -7,7 +7,7 @@ theme: readthedocs
 pages:
 - Home: index.md
 - 'Arm and Hand': 
-    - 'Setting up a real system': 'user_guide/1_0_arm_and_hand.md'
+    - 'Setting up a real system': 
         - 'Setting up the table': 'user_guide/1_1_setting_up_the_table.md'
         - 'Setting up the arm': 'user_guide/1_2_setting_up_arm.md'
         - 'Setting up the hand': 'user_guide/1_3_setting_up_hand.md'
