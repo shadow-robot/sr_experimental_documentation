@@ -1,4 +1,4 @@
-## Overview
+# Setting up the real hardware
 
 This documentation describes the setup of a Shadow Dexterous Hand attached to a UR arm (UR5 or UR10).
 
