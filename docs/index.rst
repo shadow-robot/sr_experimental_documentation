@@ -39,7 +39,17 @@ to help you create fantastic documentation for your project.
 .. toctree::
    :maxdepth: 2
    :hidden:
-   :caption: First Steps
+   :caption: Arm and Hand
 
    user_guide/1_1_setting_up_the_table
+   user_guide/1_2_setting_up_arm
+   user_guide/1_3_setting_up_hand
+   user_guide/1_4_Installing_the_software
+ 
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+   :caption: First Steps
+   
+   user_guide/1_5_setting_up_simulation
 
