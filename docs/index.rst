@@ -36,4 +36,10 @@ or are you looking to use your existing docs with Read the Docs?
 Learn about documentation authoring tools such as Sphinx and MkDocs
 to help you create fantastic documentation for your project.
 
-* **Getting started**:
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+   :caption: First Steps
+
+   user_guide/1_1_setting_up_the_table
+
