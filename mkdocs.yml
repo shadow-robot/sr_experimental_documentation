@@ -12,8 +12,3 @@ pages:
         - 'UR Arm and Hand': 'user_guide/1_arm_and_hand.md'
     - 'Bimanual system': 'user_guide/2_bimanual_system.md'
     - 'Teleoperation': 'user_guide/3_teleoperation.md'
-
-- User Documentation:
-    - 'UR Arm and Hand': 'user_guide/1_arm_and_hand.md'
-    - 'Bimanual system': 'user_guide/2_bimanual_system.md'
-    - 'Teleoperation': 'user_guide/3_teleoperation.md'

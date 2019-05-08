@@ -1,4 +1,4 @@
-# Bimanual UR arm and Dexterous Hand system
+# Overview
 
 This documentation describes the setup of a bi-manual system consisting on two Shadow Dexterous Hands attached to two UR10 arms.
 
