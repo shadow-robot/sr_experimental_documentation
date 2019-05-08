@@ -85,13 +85,13 @@ Follow these steps if you have a table and a stylus provided by Shadow Robot. It
    
 3. Type CTRL+ALT+T to open a terminal and start arm with command:
    
-   ```sh
+   ```bash
    roslaunch sr_robot_launch sr_ur10arm_box.launch sim:=false
    ```
    
 4. Open another terminal (CTRL+ALT+T) and set the payload with the following command:
    
-   ```sh
+   ```bash
    rosservice call /ra_sr_ur_robot_hw/set_payload "mass_kg: 0.0
    centre_of_mass_m:
     x: 0.0
@@ -100,14 +100,14 @@ Follow these steps if you have a table and a stylus provided by Shadow Robot. It
    ```
    
 5. Then, in the same terminal, change the control to `teach_mode` running the following:
-   ```sh
+   ```bash
    rosservice call /teach_mode "teach_mode: 1 robot: 'right_arm'"
    ```
    Now you should be able to move the arm freely
 
 6. For each marker to be calibrated:
    * Run:
-     ```sh
+     ```bash
      roslaunch sr_workspace_calibrator calibrator.launch [calibration_frame:=FRAME_NAME]
      ```
      * For multi marker setups, `FRAME_NAME` should be unique. For a single marker setup (most cases), this can be omitted and the default name `ra_calibration_marker` will be used.
@@ -133,13 +133,13 @@ Follow these steps if you have a table and a stylus provided by Shadow Robot. It
 7. The output of the process will be a yaml file named FRAME_NAME.yaml stored in sr_workspace_calibrator/config
 
 8. Finally to finish, change the control back running the following command:
-   ```sh
+   ```bash
    rosservice call /teach_mode "teach_mode: 0 robot: 'right_arm'"
    ```
    Now you should not be able to move the arm
 
 If you want to use a existing calibration, a calibration tf can be broadcast by running:
-```sh
+```bash
 roslaunch sr_workspace_calibrator calibration_tf.launch [calibration_frame:=FRAME_NAME]
 ```
 
@@ -514,7 +514,7 @@ In this section, instructions on how to create, modify and save new `.world` and
 
 In order to start creating a new world file, first you need to run a launch file with a template world file, i.e.:
 
-```sh
+```bash
 roslaunch sr_world_generator create_world_template.launch
 ```
 This will open Gazebo and Rviz with a robot in place:
@@ -532,7 +532,7 @@ In most cases, when one of Shadow's robot tables is used, the above command will
 
 As an example, a launch file starting with robot NOT in home position with a base at 0.5m height would be called as follows:
 
-```sh
+```bash
 roslaunch sr_world_generator create_world_template.launch start_home:=false initial_z:=0.5
 ```
 
@@ -642,7 +642,7 @@ A video depicting the process described above can by found [here](https://drive.
 
 When all the models are inserted in the scene and placed in desired position, the world file can be saved. Go to **File → Save World As** and select a name and a path of a world file saved with gazebo. Make sure to remember the path to the file. Recommend path is just `/home/user`. Although the file has now been saved, it has to be modified before being used by our launch files. In order to modify it, first kill the currently running Gazebo launch file and run:
 
-```sh
+```bash
 roslaunch sr_world_generator save_world_file.launch gazebo_generated_world_file_path:=path_to_file output_world_file_name:=file_name
 ```
 
@@ -656,7 +656,7 @@ When a message `World saved!` will appear in the console, kill the launch file. 
 
 In order to generate a scene file for collision scene used in non-simulated scenarios, first, run the initial launch file with the just created world file passed to the `world` argument:
 
-```sh
+```bash
 roslaunch sr_world_generator create_world_template.launch scene:=true world:=path_to_world
 ```
 
@@ -684,7 +684,7 @@ A GUI has been implemented to help with the above operations.
 
  In order to start it, make sure no Gazebo sessions are up and run:
 
-```sh
+```bash
 roslaunch sr_world_generator world_generator_gui.launch
 ```
 
