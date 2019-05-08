@@ -42,10 +42,6 @@ to help you create fantastic documentation for your project.
    :caption: Arm and Hand
    
    user_guide/1_0_arm_and_hand
-   user_guide/1_1_setting_up_the_table
-   user_guide/1_2_setting_up_arm
-   user_guide/1_3_setting_up_hand
-   user_guide/1_4_Installing_the_software
 
 Subheading
 -----------
