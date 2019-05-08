@@ -2,7 +2,7 @@ site_name: Shadow Experimental Documentation
 repo_url: https://github.com/shadow-robot/sr_experimental_documentation.git
 
 copyright: "Copyright © 2018, 2019 Shadow Robot Company"
-theme: readthedocs
+theme: 'rtd-dropdown'
 markdown_extensions:
   - smarty
   - toc
