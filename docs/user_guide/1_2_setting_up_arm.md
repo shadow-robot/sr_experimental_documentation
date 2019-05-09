@@ -73,13 +73,13 @@ Follow these steps if you have a table and a stylus provided by Shadow Robot. It
 4. Open another terminal (CTRL+ALT+T) and set the payload with the following command:
    
    ```eval_rst
-   .. prompt:: bash $
+   .. prompt:: 
    
-       rosservice call /ra_sr_ur_robot_hw/set_payload "mass_kg: 0.0/
-       centre_of_mass_m:/
-        x: 0.0/
-        y: 0.0/
-        z: 0.0"/
+       rosservice call /ra_sr_ur_robot_hw/set_payload "mass_kg: 0.0
+       centre_of_mass_m:
+        x: 0.0
+        y: 0.0
+        z: 0.0"
    ```
    
 5. Then, in the same terminal, change the control to `teach_mode` running the following:
@@ -94,6 +94,7 @@ Follow these steps if you have a table and a stylus provided by Shadow Robot. It
    * Run:
      ```eval_rst
      .. prompt:: bash $
+     
          roslaunch sr_workspace_calibrator calibrator.launch [calibration_frame:=FRAME_NAME]
      ```
      * For multi marker setups, `FRAME_NAME` should be unique. For a single marker setup (most cases), this can be omitted and the default name `ra_calibration_marker` will be used.
@@ -119,14 +120,18 @@ Follow these steps if you have a table and a stylus provided by Shadow Robot. It
 7. The output of the process will be a yaml file named FRAME_NAME.yaml stored in sr_workspace_calibrator/config
 
 8. Finally to finish, change the control back running the following command:
-   ```bash
-   rosservice call /teach_mode "teach_mode: 0 robot: 'right_arm'"
+   ```eval_rst
+   .. prompt:: bash $
+       
+       rosservice call /teach_mode "teach_mode: 0 robot: 'right_arm'"
    ```
    Now you should not be able to move the arm
 
 If you want to use a existing calibration, a calibration tf can be broadcast by running:
-```bash
-roslaunch sr_workspace_calibrator calibration_tf.launch [calibration_frame:=FRAME_NAME]
+```eval_rst
+.. prompt:: bash $
+    
+    roslaunch sr_workspace_calibrator calibration_tf.launch [calibration_frame:=FRAME_NAME]
 ```
 
 As before, for single marker setups, FRAME_NAME can be omitted and the default ra_calibration_marker will be used. The launch command can of course also be included in other launch files.
