@@ -1,4 +1,4 @@
-# Setting up the real hardware
+# Setting up the real system
 
 ```eval_rst
 .. toctree::
