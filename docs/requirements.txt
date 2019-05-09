@@ -1,0 +1,7 @@
+#
+####### example-requirements.txt #######
+#
+
+# Docs
+sphinx-prompt==1.0.0
+sphinx-notfound-page==0.2.1
