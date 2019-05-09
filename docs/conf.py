@@ -10,7 +10,6 @@
 import recommonmark
 from recommonmark.parser import CommonMarkParser
 from recommonmark.transform import AutoStructify
-from django.utils import timezone
 
 source_parsers = {
     '.md': CommonMarkParser,
@@ -30,9 +29,7 @@ source_parsers = {
 # -- Project information -----------------------------------------------------
 
 project = u'Shadow Experimental'
-copyright = u'2019-{}, Shadow Robot Company'.format(
-    timezone.now().year
-)
+copyright = u'2019, Shadow Robot Company'
 author = u'Shadow Robot Company'
 
 github_doc_root = 'https://github.com/shadow-robot/sr_experimental_documentation/tree/master/docs/index.md'
