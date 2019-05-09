@@ -74,6 +74,7 @@ Follow these steps if you have a table and a stylus provided by Shadow Robot. It
    
    ```eval_rst
    .. prompt:: bash $
+   
    rosservice call /ra_sr_ur_robot_hw/set_payload "mass_kg: 0.0
    centre_of_mass_m:
     x: 0.0
