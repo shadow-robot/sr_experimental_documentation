@@ -10,6 +10,7 @@
 import recommonmark
 from recommonmark.parser import CommonMarkParser
 from recommonmark.transform import AutoStructify
+from django.utils import timezone
 
 source_parsers = {
     '.md': CommonMarkParser,
@@ -29,7 +30,9 @@ source_parsers = {
 # -- Project information -----------------------------------------------------
 
 project = u'Shadow Experimental'
-copyright = u'2019, Shadow Robot Company'
+copyright = u'2019-{}, Shadow Robot Company'.format(
+    timezone.now().year
+)
 author = u'Shadow Robot Company'
 
 github_doc_root = 'https://github.com/shadow-robot/sr_experimental_documentation/tree/master/docs/index.md'
@@ -50,11 +53,15 @@ release = u''
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    'sphinx.ext.autosectionlabel',
     'sphinx.ext.autodoc',
     'sphinx.ext.doctest',
     'sphinx.ext.intersphinx',
     'sphinx.ext.viewcode',
     'sphinx.ext.githubpages',
+    'sphinx-prompt',
+    'recommonmark',
+    'notfound.extension',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -73,7 +80,7 @@ master_doc = 'index'
 #
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
-language = None
+language = 'en'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -203,6 +210,17 @@ epub_exclude_files = ['search.html']
 # Example configuration for intersphinx: refer to the Python standard library.
 intersphinx_mapping = {'https://docs.python.org/': None}
 
+# sphinx-notfound-page
+# https://github.com/rtfd/sphinx-notfound-page
+notfound_context = {
+    'title': 'Page Not Found',
+    'body': '''
+<h1>Page Not Found</h1>
+<p>Sorry, we couldn't find that page.</p>
+<p>Try using the search box or go to the homepage.</p>
+''',
+}
+
 # -- Options for Markdown output -------------------------------------------------
 # app setup hook
 def setup(app):
@@ -213,3 +231,4 @@ def setup(app):
         'enable_auto_doc_ref': True,
     }, True)
     app.add_transform(AutoStructify)
+    app.add_stylesheet('css/sphinx_prompt_css.css')
