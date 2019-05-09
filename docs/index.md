@@ -1,6 +1,6 @@
 # Overview
 
-This is the starting point for the Shadow Robot documentation of experimental projects
+This is the starting point for the Shadow Robot documentation of experimental projects.
 
 ## First time users
 If you are unfamiliar with ROS and intend to use the ROS API, it is highly recommended that you read the [ROS Tutorials](http://www.ros.org/wiki/ROS/Tutorials).
@@ -23,27 +23,13 @@ OS: Ubuntu 18.04, 16.04 Kinetic (Active development) or 14.04 Indigo for older r
 The most important one is to have a fast HDD or an SSD.
 
 ```eval_rst
-First steps
------------
-
-Are you new to software documentation
-or are you looking to use your existing docs with Read the Docs?
-Learn about documentation authoring tools such as Sphinx and MkDocs
-to help you create fantastic documentation for your project.
-
 .. toctree::
    :maxdepth: 2
-   :hidden:
    :caption: Arm and Hand
    
    user_guide/1_0_arm_and_hand
-
-Subheading
------------
- 
 .. toctree::
    :maxdepth: 2
-   :hidden:
    :caption: First Steps
    
    user_guide/1_5_setting_up_simulation
