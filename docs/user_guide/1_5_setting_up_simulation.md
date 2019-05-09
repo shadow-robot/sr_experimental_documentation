@@ -1,10 +1,10 @@
-## Setting up a simulated system 
+# Setting up a simulated system 
 
-### Gazebo
+## Gazebo
 
 [Gazebo](http://gazebosim.org/) is our default simultator. So follow the intructions on the next section to install and run a simulation of our robot hands using Gazebo.
 
-#### Installing the software (sim)
+### Installing the software (sim)
 
 If you do not actually have a real hand and arm but would like to use them in simulation, then please run the following command:
 
@@ -19,7 +19,7 @@ Operation completed
 ```
 and it will create two icons on your desktop that you can double-click to launch the container with the system or save the log files.
 
-#### Starting a robot in simulation
+### Starting a robot in simulation
 
 First you need to start the system container by either doble clicking the icon "Arm_Hand_Container" or running the following command:
 ```bash

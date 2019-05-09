@@ -68,7 +68,13 @@ If you have an Nvidia graphics card, you can add -nv to set the nvidia-docker ve
 You can also add -r true in case you want to reinstall the docker image and container. When it finishes it will show:
 
 ```eval_rst
-.. prompt::
+.. code:: yaml
+
+    Operation completed 
+```  
+
+```eval_rst
+.. code:: bash
 
     Operation completed 
 ```  
