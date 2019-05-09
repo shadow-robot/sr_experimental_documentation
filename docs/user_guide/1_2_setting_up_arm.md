@@ -82,10 +82,10 @@ Follow these steps if you have a table and a stylus provided by Shadow Robot. It
            z: 0.0"
    ```
    ```eval_rst
-   .. prompt:: bash
+   .. prompt:: text
 
        cd <folder>
-       cp <src>
+       cp <src> \
            <dst>
        cd -
    ```
