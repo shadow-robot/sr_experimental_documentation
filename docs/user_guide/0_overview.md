@@ -17,13 +17,15 @@ Shadow software is deployed using Docker. Docker is a container framework where 
 
 # Basic Hardware specifications
 
-In order to run our software and the ROS software stack you will need to meet some hardware requirements.
+In order to run our software and the ROS software stack you will need to meet some hardware requirements:
 
-CPU: Intel i5 or above
-RAM: 4GB or above
-Hard Drive: Fast HDD or SSD (Laptop HDD are very slow)
-Graphics Card: Nvidia GPU (optional)
-LAN: A spare LAN port to connect the Hand (even with a USB to LAN adaptor)
-OS: Ubuntu 18.04, 16.04 Kinetic (Active development) or 14.04 Indigo for older releases.
+* CPU: Intel i5 or above
+* RAM: 4GB or above
+* Hard Drive: Fast HDD or SSD (Laptop HDD are very slow)
+* Graphics Card: Nvidia GPU (optional)
+* LAN: A spare LAN port to connect the Hand (even with a USB to LAN adaptor)
+* OS: Ubuntu 18.04, 16.04 Kinetic (Active development) or 14.04 Indigo for older releases.
 
 The most important one is to have a fast HDD or an SSD.
+
+In each project, a list of more specific hardware needed will be specified.
