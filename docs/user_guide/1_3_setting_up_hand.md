@@ -1,6 +1,6 @@
-## Setting up the hand
+# Setting up the hand
 
-### What's in the box?
+## What's in the box?
 
 ```eval_rst
 =========================   ===========================================================
@@ -18,10 +18,10 @@ User Manual                 This document
 =========================   ===========================================================
 ```
 
-### Connecting Cables
+## Connecting Cables
 There are two ways to connect the EtherCAT and power cables to the hand.
 
-#### External connections
+### External connections
 If your hand already has cables fitted, then you can simply connect the EtherCAT and power connectors immediately.
 ![Connecting cables](../img/connecting_cables_external.png)
 
@@ -31,20 +31,20 @@ You have been supplied with a medium length Ethernet lead, but if you require a 
 
 **Power**: Connect the external power supply to the hand using the metal Lemo connector, making sure to line up the red dots. If you require a longer or shorter cable, please contact the Shadow Robot Company.
 
-#### Internal connections
+### Internal connections
 If you are connecting the hand to a robot with internal cabling, then you may wish to use the internal connectors.
 Turn the hand over, and use the orange and green hex drivers to remove the connector cover. Connect the two cables to their relevant sockets. Now affix the hand to the robot arm.
 ![Connecting cables](../img/connecting_cables_internal.png)
 
-### Mounting the hand
+## Mounting the hand
 
 Use the elbow adaptor plate supplied to adapt the Hand to the UR robot arm and mount the hand.
 
-### Powering up
+## Powering up
 
 You can power up the hand and PC in any order. You do not have to power up one before the other. When power is applied to the hand, the fans will be heard immediately.
 
-#### Lights
+### Lights
 
 On power up, the lights will be in the following state
 
@@ -64,11 +64,9 @@ ET1200 chip select        Yellow              On                  PIC32 communic
 
 Lights will also appear inside the base, indicating 5v, 6v and 24v (or 28v) supplies. These can only be seen by removing the covers.
 
-#### Jiggling
+### Jiggling
 
 This applies to the motor hand only. On reset, all of the strain gauges (torque sensors) in the
 motors need to be zeroed. This happens automatically. The motors are driven back and forth
 to try to relieve any tension on the tendons. Then both gauges are zeroed. You will therefore
 see all joints of the hand move slightly on power up or reset or power up.
-
-
