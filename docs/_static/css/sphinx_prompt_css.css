@@ -11,4 +11,5 @@ pre.highlight {
 pre.highlight span[class^="prompt"] {
   font-size: 12px;
   line-height: 1.4;
+  background-color: transparent;
 }
