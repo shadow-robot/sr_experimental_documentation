@@ -1,4 +1,4 @@
-## Setting up the arm
+# Setting up the arm
 
 1. Unpack the robot arm and the control box.
 2. Mount the arm on the table. If you have a demo table, the cable socket should point roughly towards the wire hole in the table. Place the base of the robot onto the mounting plate and add screws from the top. 
@@ -21,7 +21,7 @@ To quickly start up the robot after it has been installed, perform the following
 3. Press ON button on the touch screen. Wait a few seconds until robot state changes to idle.
 4. Press START button on the touch screen. The robot now makes a sound and moves a little while releasing the brakes.
 
-### Configuring the network
+## Configuring the network
 
 In order to use the robot with our driver you need to change the network setup of the robot via the pendant, performing the following steps:
 1. To setup the IP of the robot Press Exit on Initialization screen:
@@ -49,7 +49,7 @@ In order to use the robot with our driver you need to change the network setup o
    ```
 4. Press "Apply" when you finish.
 
-### Arm Calibration Procedure
+## Arm Calibration Procedure
 Follow these steps if you have a table and a stylus provided by Shadow Robot. It should only be ran once when the table is setup for the first time.
 
 1. The arm should be mounted on the table but without hand. First, mount the calibration stylus as shown below:
@@ -66,6 +66,12 @@ Follow these steps if you have a table and a stylus provided by Shadow Robot. It
    
    ```bash
    roslaunch sr_robot_launch sr_ur10arm_box.launch sim:=false
+   ```
+   
+   ```eval_rst
+   .. prompt:: bash $
+
+       pip install mkdocs
    ```
    
 4. Open another terminal (CTRL+ALT+T) and set the payload with the following command:
@@ -124,7 +130,7 @@ roslaunch sr_workspace_calibrator calibration_tf.launch [calibration_frame:=FRAM
 
 As before, for single marker setups, FRAME_NAME can be omitted and the default ra_calibration_marker will be used. The launch command can of course also be included in other launch files.
 
-### UR10 supporting firmware
+## UR10 supporting firmware
 
 In the following table, you can find the firmware version of the Universal Robot software and see if it has been tested with our software:
 
