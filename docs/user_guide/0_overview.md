@@ -1,13 +1,13 @@
 # Experimental projects
 Currently, you can get information of the following experimental projects:
 ```eval_rst
-* :doc:`**UR Arm and Dexterous Hand** <1_0_arm_and_hand.md>`
+* :doc:`**UR Arm and Dexterous Hand** <1_0_arm_and_hand>`
   
 * **UR Arm and Dexterous Hand**:
-  :doc:`With Sphinx <1_0_arm_and_hand.md>`
+  :doc:`With Sphinx <1_0_arm_and_hand>`
   
 * **Bimanual System**:
-  :doc:`Import guide <2_bimanual_system.md>`
+  :doc:`Overview <2_bimanual_system>`
 ```
 
 # First time users
