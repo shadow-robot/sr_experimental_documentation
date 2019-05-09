@@ -1,3 +1,15 @@
+# Experimental projects
+Currently, you can get information of the following experimental projects:
+```eval_rst
+* :doc:`**UR Arm and Dexterous Hand** <1_0_arm_and_hand.md>`
+  
+* **UR Arm and Dexterous Hand**:
+  :doc:`With Sphinx <1_0_arm_and_hand.md>`
+  
+* **Bimanual System**:
+  :doc:`Import guide <2_bimanual_system.md>`
+```
+
 # First time users
 If you are unfamiliar with ROS and intend to use the ROS API, it is highly recommended that you read the [ROS Tutorials](http://www.ros.org/wiki/ROS/Tutorials).
 
