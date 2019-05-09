@@ -75,19 +75,7 @@ Follow these steps if you have a table and a stylus provided by Shadow Robot. It
    ```eval_rst
    .. prompt:: bash $ 
    
-       rosservice call /ra_sr_ur_robot_hw/set_payload "mass_kg: 0.0 \
-       centre_of_mass_m: \
-           x: 0.0 \
-           y: 0.0 \
-           z: 0.0"
-   ```
-   ```eval_rst
-   .. prompt:: bash $ 
-
-       cd <folder>
-       cp <src>
-           <dst>
-       cd -
+       rosservice call /ra_sr_ur_robot_hw/set_payload "mass_kg: 0.0 centre_of_mass_m: x: 0.0 y: 0.0 z: 0.0"
    ```
    
 5. Then, in the same terminal, change the control to `teach_mode` running the following:
