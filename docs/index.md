@@ -1,4 +1,4 @@
-# Overview
+# Shadow Experimental Documentation
 
 This is the starting point for the Shadow Robot documentation of experimental projects.
 
@@ -14,10 +14,11 @@ This is the starting point for the Shadow Robot documentation of experimental pr
    :caption: Arm and Hand
    
    user_guide/1_0_arm_and_hand
+
 .. toctree::
    :maxdepth: 2
-   :caption: First Steps
+   :caption: Bimanual System
    
-   user_guide/1_5_setting_up_simulation
+   user_guide/2_bimanual_system.md
 
 ```
