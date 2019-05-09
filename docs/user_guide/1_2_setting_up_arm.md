@@ -75,23 +75,26 @@ Follow these steps if you have a table and a stylus provided by Shadow Robot. It
    ```eval_rst
    .. prompt:: bash $
    
-   rosservice call /ra_sr_ur_robot_hw/set_payload "mass_kg: 0.0
-   centre_of_mass_m:
-    x: 0.0
-    y: 0.0
-    z: 0.0"
+       rosservice call /ra_sr_ur_robot_hw/set_payload "mass_kg: 0.0
+       centre_of_mass_m:
+        x: 0.0
+        y: 0.0
+        z: 0.0"
    ```
    
 5. Then, in the same terminal, change the control to `teach_mode` running the following:
-   ```bash
-   rosservice call /teach_mode "teach_mode: 1 robot: 'right_arm'"
+   ```eval_rst
+   .. prompt:: bash $
+   
+       rosservice call /teach_mode "teach_mode: 1 robot: 'right_arm'"
    ```
    Now you should be able to move the arm freely
 
 6. For each marker to be calibrated:
    * Run:
-     ```bash
-     roslaunch sr_workspace_calibrator calibrator.launch [calibration_frame:=FRAME_NAME]
+     ```eval_rst
+     .. prompt:: bash $
+         roslaunch sr_workspace_calibrator calibrator.launch [calibration_frame:=FRAME_NAME]
      ```
      * For multi marker setups, `FRAME_NAME` should be unique. For a single marker setup (most cases), this can be omitted and the default name `ra_calibration_marker` will be used.
      * Follow on screen instructions, touching carefully the tip of stylus into each hole. 
