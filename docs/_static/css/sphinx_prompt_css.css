@@ -5,11 +5,11 @@ pre.highlight {
   overflow-x: auto;
   margin: 1px 0 24px 0;
   padding: 12px 12px;
+  background-color: red;
 }
 
 /* Tweak css for sphinx_prompt #5281 */
 pre.highlight span[class^="prompt"] {
   font-size: 12px;
   line-height: 1.4;
-  background-color: transparent;
 }
