@@ -85,7 +85,7 @@ Follow these steps if you have a table and a stylus provided by Shadow Robot. It
    .. prompt:: bash
 
        cd <folder>
-       cp <src> \
+       cp <src>
            <dst>
        cd -
    ```
