@@ -29,9 +29,3 @@ In order to run our software and the ROS software stack you will need to meet so
 The most important one is to have a fast HDD or an SSD.
 
 In each project, a list of more specific hardware needed will be specified.
-
-```eval_rst
-.. prompt:: bash $
-
-    pip install mkdocs
-```

@@ -63,20 +63,17 @@ Follow these steps if you have a table and a stylus provided by Shadow Robot. It
 2. Attach the ar_marker base to the table without the markers on
    
 3. Type CTRL+ALT+T to open a terminal and start arm with command:
-   
-   ```bash
-   roslaunch sr_robot_launch sr_ur10arm_box.launch sim:=false
-   ```
-   
-```eval_rst
-.. prompt:: bash $
+    
+   ```eval_rst
+   .. prompt:: bash $
 
-    pip install mkdocs
-```
+       roslaunch sr_robot_launch sr_ur10arm_box.launch sim:=false
+   ```
    
 4. Open another terminal (CTRL+ALT+T) and set the payload with the following command:
    
-   ```bash
+   ```eval_rst
+   .. prompt:: bash $
    rosservice call /ra_sr_ur_robot_hw/set_payload "mass_kg: 0.0
    centre_of_mass_m:
     x: 0.0
