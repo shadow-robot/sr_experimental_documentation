@@ -81,6 +81,14 @@ Follow these steps if you have a table and a stylus provided by Shadow Robot. It
            y: 0.0
            z: 0.0"
    ```
+   ```eval_rst
+   .. prompt:: bash
+
+       cd <folder>
+       cp <src> \
+           <dst>
+       cd -
+   ```
    
 5. Then, in the same terminal, change the control to `teach_mode` running the following:
    ```eval_rst
