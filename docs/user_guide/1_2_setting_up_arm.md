@@ -68,11 +68,11 @@ Follow these steps if you have a table and a stylus provided by Shadow Robot. It
    roslaunch sr_robot_launch sr_ur10arm_box.launch sim:=false
    ```
    
-   ```eval_rst
-   .. prompt:: bash $
+```eval_rst
+.. prompt:: bash $
 
-       pip install mkdocs
-   ```
+    pip install mkdocs
+```
    
 4. Open another terminal (CTRL+ALT+T) and set the payload with the following command:
    
