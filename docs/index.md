@@ -8,12 +8,13 @@ This is the starting point for the Shadow Robot documentation of experimental pr
    :caption: Overview
    
    user_guide/0_overview
-   
+     
 .. toctree::
    :maxdepth: 2
    :caption: Arm and Hand
    
    user_guide/1_0_arm_and_hand
+   user_guide/1_0_setting_up_real_system.md
 
 .. toctree::
    :maxdepth: 2
