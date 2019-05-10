@@ -21,7 +21,7 @@ In the above example, ‘enp0s25’ is the interface ID that is needed.
 ## Get ROS Upload login credentials
 
 If you want to upload technical logged data (ROS logs, backtraces, crash dumps etc.) to our server and notify the Shadow's software team to investigate your bug then you need to enable logs uploading in the one-liner. In order to use this option you need to obtain a unique upload key by emailing sysadmin@shadowrobot.com. When you receive the key you can use it when running the one-liner installation tool. To enable the logs uploading you need to add the command line option ```-ck true``` to the one-liner.
-After executing the one-liner, it will prompt you to enter your upload key and press enter to continue. Please copy and paste your key from the email you received by Shadow Robot.
+After executing the one-liner, it will prompt you to enter your upload key and press enter to continue. Pleaser copy and paste your key from the email you received by Shadow Robot.
 
 ## Check your hand configuration branch
 
@@ -66,18 +66,6 @@ Same as above but with ROS logs upload enabled
 If you have an Nvidia graphics card, you can add -nv to set the nvidia-docker version. Use ``-nv 1`` or ``-nv 2`` for version 1.0 or 2.0 respectively. Must be used with ``-g true``.
 
 You can also add -r true in case you want to reinstall the docker image and container. When it finishes it will show:
-
-```eval_rst
-.. code:: yaml
-
-    Operation completed 
-```  
-
-```eval_rst
-.. code:: bash
-
-    Operation completed bla
-```  
 
 ```bash
 Operation completed
