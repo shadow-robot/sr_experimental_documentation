@@ -9,8 +9,10 @@
 If you do not actually have a real hand and arm but would like to use them in simulation, then please run the following command:
 
 ROS Kinetic (Recommended):
-```bash
-$ bash <(curl -Ls http://bit.ly/launch-sh) -i shadowrobot/dexterous-hand:kinetic-release -n arm-and-hand -sn Arm_Hand_Container -b kinetic_devel -e eth0 -l false
+```eval_rst
+.. prompt:: bash $
+
+    bash <(curl -Ls http://bit.ly/launch-sh) -i shadowrobot/dexterous-hand:kinetic-release -n arm-and-hand -sn Arm_Hand_Container -b kinetic_devel -e eth0 -l false
 ```
 
 You can also add -r true in case you want to reinstall the docker image and container. When it finishes it will show:
@@ -22,10 +24,14 @@ and it will create two icons on your desktop that you can double-click to launch
 ### Starting a robot in simulation
 
 First you need to start the system container by either doble clicking the icon "Arm_Hand_Container" or running the following command:
-```bash
-$ docker start arm-and-hand
+```eval_rst
+.. prompt:: bash $
+
+   docker start arm-and-hand
 ```
 Then, inside the container, launch the arm and hand by running:
-```bash
-roslaunch sr_robot_launch sr_right_ur10arm_hand.launch
+```eval_rst
+.. prompt:: bash $
+
+   roslaunch sr_robot_launch sr_right_ur10arm_hand.launch
 ```

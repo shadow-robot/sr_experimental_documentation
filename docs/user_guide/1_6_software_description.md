@@ -139,8 +139,10 @@ In this section, instructions on how to create, modify and save new `.world` and
 
 In order to start creating a new world file, first you need to run a launch file with a template world file, i.e.:
 
-```bash
-roslaunch sr_world_generator create_world_template.launch
+```eval_rst
+.. prompt:: bash $
+
+   roslaunch sr_world_generator create_world_template.launch
 ```
 This will open Gazebo and Rviz with a robot in place:
 
@@ -157,8 +159,10 @@ In most cases, when one of Shadow's robot tables is used, the above command will
 
 As an example, a launch file starting with robot NOT in home position with a base at 0.5m height would be called as follows:
 
-```bash
-roslaunch sr_world_generator create_world_template.launch start_home:=false initial_z:=0.5
+```eval_rst
+.. prompt:: bash $
+
+   roslaunch sr_world_generator create_world_template.launch start_home:=false initial_z:=0.5
 ```
 
 #### Adding objects to the world
@@ -267,8 +271,10 @@ A video depicting the process described above can by found [here](https://drive.
 
 When all the models are inserted in the scene and placed in desired position, the world file can be saved. Go to **File → Save World As** and select a name and a path of a world file saved with gazebo. Make sure to remember the path to the file. Recommend path is just `/home/user`. Although the file has now been saved, it has to be modified before being used by our launch files. In order to modify it, first kill the currently running Gazebo launch file and run:
 
-```bash
-roslaunch sr_world_generator save_world_file.launch gazebo_generated_world_file_path:=path_to_file output_world_file_name:=file_name
+```eval_rst
+.. prompt:: bash $
+
+   roslaunch sr_world_generator save_world_file.launch gazebo_generated_world_file_path:=path_to_file output_world_file_name:=file_name
 ```
 
 where:
@@ -281,8 +287,10 @@ When a message `World saved!` will appear in the console, kill the launch file. 
 
 In order to generate a scene file for collision scene used in non-simulated scenarios, first, run the initial launch file with the just created world file passed to the `world` argument:
 
-```bash
-roslaunch sr_world_generator create_world_template.launch scene:=true world:=path_to_world
+```eval_rst
+.. prompt:: bash $
+
+   roslaunch sr_world_generator create_world_template.launch scene:=true world:=path_to_world
 ```
 
 where **path_to_world** is the full path to the world file that just has been generated. When Rviz starts, on the left hand side, navigate to the **Scene Objects** tab
@@ -307,10 +315,12 @@ A GUI has been implemented to help with the above operations.
   :align: center
 ```
 
- In order to start it, make sure no Gazebo sessions are up and run:
+In order to start it, make sure no Gazebo sessions are up and run:
 
-```bash
-roslaunch sr_world_generator world_generator_gui.launch
+```eval_rst
+.. prompt:: bash $
+
+   roslaunch sr_world_generator world_generator_gui.launch
 ```
 
 In order to start a new Gazebo session set following parameters to your preference:
