@@ -13,3 +13,7 @@ pre.highlight span[class^="prompt"] {
   font-size: 12px;
   line-height: 1.4;
 }
+
+code {
+  background-color: rgba(220, 220, 220, 0.2);
+}
