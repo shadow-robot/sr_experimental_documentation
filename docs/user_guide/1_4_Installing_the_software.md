@@ -76,7 +76,7 @@ You can also add -r true in case you want to reinstall the docker image and cont
 ```eval_rst
 .. code:: bash
 
-    Operation completed 
+    Operation completed bla
 ```  
 
 ```bash
