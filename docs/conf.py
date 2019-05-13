@@ -212,7 +212,7 @@ notfound_context = {
     'body': '''
 <h1>Page Not Found</h1>
 <p>Sorry, we couldn't find that page.</p>
-<p>Try using the search box or go to the homepage.</p>
+<p>Try going to the homepage.</p>
 ''',
 }
 
@@ -221,7 +221,6 @@ notfound_context = {
 def setup(app):
     app.add_stylesheet('css/sphinx_prompt_css.css')
     app.add_config_value('recommonmark_config', {
-        #'url_resolver': lambda url: github_doc_root + url,
         'auto_toc_tree_section': 'Contents',
         'enable_eval_rst': True,
         'enable_auto_doc_ref': True,
