@@ -211,8 +211,7 @@ notfound_context = {
     'title': 'Page Not Found',
     'body': '''
 <h1>Page Not Found</h1>
-<p>Sorry, we couldn't find that page.</p>
-<p>Try going to the homepage.</p>
+<p>Sorry, we couldn't find that page. Try going to the homepage.</p>
 ''',
 }
 
