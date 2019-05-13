@@ -13,11 +13,3 @@ pre.highlight span[class^="prompt"] {
   font-size: 12px;
   line-height: 1.4;
 }
-
-div.highlight {
-  background-color: rgba(220, 220, 220, 0.2);
-}
-
-div.highlight-bash {
-background-color: rgba(220, 220, 220, 0.2);
-}
