@@ -131,7 +131,7 @@ Parameters:
 ```
 ## Creating a new world/scene
 
-In this section, instructions on how to create, modify and save new `.world` and `.scene` file are provided. All the necessary console commands are described in depth, however, it is recommended that the user uses graphical user interface introduced at the end of this section.
+In this section, instructions on how to create, modify and save new `.world` and `.scene` file are provided. All the necessary console commands are described in depth, however, it is recommended that the user uses the graphical user interface introduced at the end of this section.
 
 ### Using console commands
 
