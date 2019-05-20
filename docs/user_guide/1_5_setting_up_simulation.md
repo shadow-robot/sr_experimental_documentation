@@ -2,7 +2,7 @@
 
 ## Gazebo
 
-[Gazebo](http://gazebosim.org/) is our default simultator. So follow the intructions on the next section to install and run a simulation of our robot hands using Gazebo.
+[Gazebo](http://gazebosim.org/) is our default simultator. Follow the intructions on the next section to install and run a simulation of our robot hands using Gazebo.
 
 ### Installing the software (sim)
 
