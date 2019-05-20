@@ -77,7 +77,7 @@ and it will create two desktop icons on your desktop that you can double-click t
 
 # Starting the driver
 
-Launch the driver at a terminal (in the container), typing:
+Launch the driver in a terminal (in the container), typing:
 
 ```eval_rst
 .. prompt:: bash $
