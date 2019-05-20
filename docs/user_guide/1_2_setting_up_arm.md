@@ -49,7 +49,7 @@ In order to use the robot with our driver you need to change the network setup o
    ```
 4. Press "Apply" when you finish.
 
-## Arm Calibration Procedure
+## Table-Arm Calibration Procedure
 Follow these steps if you have a table and a stylus provided by Shadow Robot. It should only be ran once when the table is setup for the first time.
 
 1. The arm should be mounted on the table but without hand. First, mount the calibration stylus as shown below:
