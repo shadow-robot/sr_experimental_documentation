@@ -25,7 +25,7 @@ There are three clases available:
 ### SrArmCommander
 
 The SrArmCommander inherits all methods from the [robot commander](https://dexterous-hand.readthedocs.io/en/latest/user_guide/2_software_description.html#srrobotcommander) and provides commands specific to the arm. It allows movement to a certain position in cartesian space, to a configuration in joint space
-or move using certain trajectory.
+or move using a trajectory.
 
 #### Setup
 ```eval_rst
