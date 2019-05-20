@@ -65,7 +65,9 @@ Same as above but with ROS logs upload enabled
 
 If you have an Nvidia graphics card, you can add -nv to set the nvidia-docker version. Use ``-nv 1`` or ``-nv 2`` for version 1.0 or 2.0 respectively. Must be used with ``-g true``.
 
-You can also add -r true in case you want to reinstall the docker image and container. When it finishes it will show:
+You can also add -r true in case you want to reinstall the docker image and container. 
+
+When the one-liner finishes it will show:
 
 ```bash
 Operation completed
