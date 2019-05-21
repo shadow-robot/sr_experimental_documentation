@@ -245,7 +245,7 @@ to try to relieve any tension on the tendons. Then both gauges are zeroed. You w
 see all joints of the hand move slightly on power up or reset or power up.
 
 
-### Installing the software
+### Installing the software
 
 We have created a one-liner that is able to install Docker, download the image and create a new container for you. It will also create two desktop icons, one to start the container and launch the hand and another one to save the log files locally. To use it, you first need to have a PC with Ubuntu installed on it (preferable version 16.04) then follow these steps:
 

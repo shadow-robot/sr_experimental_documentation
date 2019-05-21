@@ -1,28 +1,27 @@
-# Experimental Products Documentation
+# Shadow Experimental Documentation
 
-This is the starting point for the Shadow Robot documentation of experimental projects
+This is the starting point for the Shadow Robot documentation of experimental projects.
 
-## Contents
-* [UR Arm and Hand](user_guide/1_arm_and_hand.md)
-* [Bimanual system](user_guide/2_bimanual_system.md) 
-* [Teleoperation](user_guide/3_teleoperation.md) 
+```eval_rst
+.. toctree::
+   :maxdepth: 2
+   :caption: Overview
+   
+   user_guide/0_overview
+     
+.. toctree::
+   :maxdepth: 2
+   :caption: Arm and Hand
+   
+   user_guide/1_0_arm_and_hand
+   user_guide/1_0_setting_up_real_system
+   user_guide/1_5_setting_up_simulation
+   user_guide/1_6_software_description
 
-## First time users
-If you are unfamiliar with ROS and intend to use the ROS API, it is highly recommended that you read the [ROS Tutorials](http://www.ros.org/wiki/ROS/Tutorials).
+.. toctree::
+   :maxdepth: 2
+   :caption: Bimanual System
+   
+   user_guide/2_bimanual_system.md
 
-If you are unfamiliar with the terminal on Linux, you should look [here](https://askubuntu.com/questions/183775/how-do-i-open-a-terminal).
-
-Shadow software is deployed using Docker. Docker is a container framework where each container image is a lightweight, stand-alone, executable package that includes everything needed to run it. It is similar to a virtual machine but with much less overhead. Follow the instructions in the next section to get the latest Docker container of the hand driver and interface up and running.
-
-## Basic Hardware specifications
-
-In order to run our software and the ROS software stack you will need to meet some hardware requirements.
-
-CPU: Intel i5 or above
-RAM: 4GB or above
-Hard Drive: Fast HDD or SSD (Laptop HDD are very slow)
-Graphics Card: Nvidia GPU (optional)
-LAN: A spare LAN port to connect the Hand (even with a USB to LAN adaptor)
-OS: Ubuntu 18.04, 16.04 Kinetic (Active development) or 14.04 Indigo for older releases.
-
-The most important one is to have a fast HDD or an SSD.
+```
