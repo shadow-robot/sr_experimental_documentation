@@ -12,10 +12,10 @@ ROS Kinetic (Recommended):
 ```eval_rst
 .. prompt:: bash $
 
-    bash <(curl -Ls http://bit.ly/launch-sh) -i shadowrobot/dexterous-hand:kinetic-release -n arm-and-hand -sn Arm_Hand_Container -b kinetic_devel -e eth0 -l false
+    bash <(curl -Ls bit.ly/run-aurora) docker_deploy product=hand_e
 ```
 
-You can also add -r true in case you want to reinstall the docker image and container. When it finishes it will show:
+You can also add reinstall=true true in case you want to reinstall the docker image and container. When it finishes it will show:
 ```bash
 Operation completed
 ```
@@ -27,7 +27,7 @@ First you need to start the system container by either doble clicking the icon "
 ```eval_rst
 .. prompt:: bash $
 
-   docker start arm-and-hand
+   docker start dexterous_hand_real_hw
 ```
 Then, inside the container, launch the arm and hand by running:
 ```eval_rst

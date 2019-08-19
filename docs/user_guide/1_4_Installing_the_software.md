@@ -20,7 +20,7 @@ In the above example, ‘enp0s25’ is the interface ID that is needed.
 
 ## Get ROS Upload login credentials
 
-If you want to upload technical logged data (ROS logs, backtraces, crash dumps etc.) to our server and notify the Shadow's software team to investigate your bug then you need to enable logs uploading in the one-liner. In order to use this option you need to obtain a unique upload key by emailing sysadmin@shadowrobot.com. When you receive the key you can use it when running the one-liner installation tool. To enable the logs uploading you need to add the command line option ```-ck true``` to the one-liner.
+If you want to upload technical logged data (ROS logs, backtraces, crash dumps etc.) to our server and notify the Shadow's software team to investigate your bug then you need to enable logs uploading in the one-liner. In order to use this option you need to obtain a unique upload key by emailing sysadmin@shadowrobot.com. When you receive the key you can use it when running the one-liner installation tool. To enable the logs uploading you need to add the command line option ```use_aws=true``` to the one-liner.
 After executing the one-liner, it will prompt you to enter your upload key and press enter to continue. Pleaser copy and paste your key from the email you received by Shadow Robot.
 
 ## Check your hand configuration branch
@@ -43,7 +43,7 @@ ROS Kinetic (Recommended):
 ```eval_rst
 .. prompt:: bash $
 
-    bash <(curl -Ls http://bit.ly/launch-sh) -i shadowrobot/dexterous-hand:kinetic-release -n arm-and-hand -sn Arm_Hand_Launcher -e [EtherCAT interface ID] -b [sr_config_branch] -l false
+    bash <(curl -Ls bit.ly/run-aurora) docker_deploy product=hand_e ethercat_interface=[EtherCAT interface ID] config_branch=[sr_config_branch]
 ```
 
 Examples:
@@ -52,7 +52,7 @@ For Interface ID ```ens0s25``` and sr_config_branch ```shadow_12345```
 ```eval_rst
 .. prompt:: bash $
 
-    bash <(curl -Ls http://bit.ly/launch-sh) -i shadowrobot/dexterous-hand:kinetic-release -n arm-and-hand -sn Arm_Hand_Launcher -e ens0s25 -b shadow_12345 -l false
+    bash <(curl -Ls bit.ly/run-aurora) docker_deploy product=hand_e ethercat_interface=ens0s25 config_branch=shadow_12345
 ```  
 
 Same as above but with ROS logs upload enabled
@@ -60,12 +60,12 @@ Same as above but with ROS logs upload enabled
 ```eval_rst
 .. prompt:: bash $
 
-    bash <(curl -Ls http://bit.ly/launch-sh) -i shadowrobot/dexterous-hand:kinetic-release -n arm-and-hand -sn Hand_Launcher -e ens0s25 -b shadow_12345  -l false -ck true 
+    bash <(curl -Ls bit.ly/run-aurora) docker_deploy product=hand_e ethercat_interface=ens0s25 config_branch=shadow_12345 use_aws=true 
 ```  
 
-If you have an Nvidia graphics card, you can add -nv to set the nvidia-docker version. Use ``-nv 1`` or ``-nv 2`` for version 1.0 or 2.0 respectively. Must be used with ``-g true``.
+If you have an Nvidia graphics card, you can add nvidia_docker to set the nvidia-docker version. Use ``nvidia_docker=1`` or ``nvidia_docker=2`` for version 1.0 or 2.0 respectively.
 
-You can also add -r true in case you want to reinstall the docker image and container. 
+You can also add reinstall=true true in case you want to reinstall the docker image and container. 
 
 When the one-liner finishes it will show:
 
@@ -77,7 +77,7 @@ and it will create two desktop icons on your desktop that you can double-click t
 
 # Starting the driver
 
-Launch the driver in a terminal (in the container), typing:
+Launch the driver for the Shadow Hand using the desktop icon 'Shadow_Hand_Launcher' if the one-liner was executed using the ```launch_hand=true``` argument or at a terminal (in the container), type:
 
 ```eval_rst
 .. prompt:: bash $
