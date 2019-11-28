@@ -159,3 +159,5 @@ __ https://shadowrobot.atlassian.net/projects/SRC?selectedItem=com.atlassian.plu
 
 __ https://shadowrobot.atlassian.net/projects/SRC?selectedItem=com.atlassian.plugins.atlassian-connect-plugin:com.kanoah.test-manager__main-project-page#!/testPlayer/SRC-R83
 ```
+
+Please make sure that when you test a new firmware version to update the file [known_good_firmware](https://github.com/shadow-robot/common_resources/blob/kinetic-devel/sr_firmware_checker/config/known_good_firmware.txt) with a PR adding the numbers as shown in the file.
