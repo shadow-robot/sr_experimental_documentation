@@ -336,11 +336,17 @@ You can use the `Open Gazebo` section again to check your newly created world fi
 ### Force/Torque feedback (only applicable for UR10e)
 The UR10e comes equipped with a force/torque sensor on the end effector with the followin specifications:
 
+```eval_rst
++----------------------------+---------+
 | F/T Sensor - Force, x-y-z  |         |
-|----------------------------|---------|
++----------------------------+---------+
 | Range                      | 100 N   |
++----------------------------+---------+
 | Resolution                 | 2.0 N   |
++----------------------------+---------+
 | Accuracy                   | 5.5 N   |
++----------------------------+---------+
+```
 
 | F/T Sensor - Torque, x-y-z |         |
 |----------------------------|---------|
