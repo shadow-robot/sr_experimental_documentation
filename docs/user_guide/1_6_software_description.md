@@ -338,7 +338,7 @@ The UR10e comes equipped with a force/torque sensor on the end effector with the
 
 ```eval_rst
 +----------------------------+---------+
-| F/T Sensor - Force, x-y-z           |
+| F/T Sensor - Force, x-y-z  |         |
 +----------------------------+---------+
 | Range                      | 100 N   |
 +----------------------------+---------+
