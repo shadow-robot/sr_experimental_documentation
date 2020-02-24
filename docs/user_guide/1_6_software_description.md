@@ -331,3 +331,28 @@ In order to start a new Gazebo session set following parameters to your preferen
 After setting the above parameters to your preference, click `Open`. A new session of Gazebo will start. After modifying the world to your liking, as in the instructions in the previous sections, go to `File → Save World As` and select a name and a path of a world file. Make sure to remember the path to the file. Recommended path is just `/home/user`. Although the file has now been saved, it has to be modified before being used by our launch files. In order to do that, first kill current Gazebo session using the `Close` button in the `Open Gazebo` section of the GUI. Then use the `Transform world file` area to navigate to your newly created Gazebo world file and click `Transform`. A pop-up window will appear asking for the properly formatted world file name. After clicking `Save` your file will be created and will be ready to be used.
 
 You can use the `Open Gazebo` section again to check your newly created world file and export it to the `scene` file as described in the sections above.
+
+## Sensor information
+### Force/Torque feedback (only applicable for UR10e)
+The UR10e comes equipped with a force/torque sensor on the end effector with the followin specifications:
+
+| F/T Sensor - Force, x-y-z  |         |
+|----------------------------|---------|
+| Range                      | 100 N   |
+| Resolution                 | 2.0 N   |
+| Accuracy                   | 5.5 N   |
+
+| F/T Sensor - Torque, x-y-z |         |
+|----------------------------|---------|
+| Range                      | 10 Nm   |
+| Resolution                 | 0.02 Nm |
+| Accuracy                   | 0.60 Nm |
+
+To read the data from the sensor use the topic:
+```eval_rst
+.. prompt:: bash $
+
+   rostopic echo /wrench
+```
+
+It is of type WrenchStamped as defined [here](http://docs.ros.org/melodic/api/geometry_msgs/html/msg/WrenchStamped.html).
