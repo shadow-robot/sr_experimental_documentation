@@ -305,7 +305,7 @@ and click **Export As Text**. A pop-up window will appear asking for a name and 
 
 A video depicting the process described above can by found [here](https://drive.google.com/file/d/1Uv1MeC2xc1nZ8Ati1cKaegHN8LJzsyhM/view?usp=sharing).
 
-## Using the graphical user interface
+### Using the graphical user interface
 
 A GUI has been implemented to help with the above operations.
 
