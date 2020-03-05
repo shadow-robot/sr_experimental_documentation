@@ -167,7 +167,7 @@ As an example, a launch file starting with robot NOT in home position with a bas
 
 #### Adding objects to the world
 
-In order to add existing object to the world, navigate to the left hand side bar in Gazebo and click on the **Insert** tab:
+In order to add an existing object to the world, navigate to the left hand side bar in Gazebo and click on the **Insert** tab:
 
 ```eval_rst
 .. image:: ../img/insert_object.png
@@ -201,7 +201,7 @@ In order to move the object around, click on the object, then click the followin
 
 then click back on the object. You can move it around now. It is usually easier to use the appearing axis frame instead of trying to drag the object itself.
 
-Same process process can be done for rotation, after clicking this icon:
+The same process can be done for rotation, after clicking this icon:
 
 ```eval_rst
 .. image:: ../img/rotate_object.png
@@ -217,7 +217,7 @@ It is also possible to set the specific pose of the object in the pose field. Yo
   :align: center
 ```
 
-A video depicting the process described above can by found [here](https://drive.google.com/file/d/1bm6PckbXbUY9ELF_6f4LWAIdXbkIZnQ1/view?usp=sharing).
+A video depicting the process described above can be found [here](https://drive.google.com/file/d/1bm6PckbXbUY9ELF_6f4LWAIdXbkIZnQ1/view?usp=sharing).
 
 #### Creating new objects
 
@@ -265,11 +265,11 @@ For model name, DO NOT use numbers. Other than that, any name would suffice, pro
 
 As mentioned before, the same process (dimension change and saving) can be used with mesh files.
 
-A video depicting the process described above can by found [here](https://drive.google.com/file/d/1yoLMEdtsf-U4bimTCqofrLLD3mPABT-9/view?usp=sharing).
+A video depicting the process described above can be found [here](https://drive.google.com/file/d/1yoLMEdtsf-U4bimTCqofrLLD3mPABT-9/view?usp=sharing).
 
 #### Generating proper world file
 
-When all the models are inserted in the scene and placed in desired position, the world file can be saved. Go to **File → Save World As** and select a name and a path of a world file saved with gazebo. Make sure to remember the path to the file. Recommend path is just `/home/user`. Although the file has now been saved, it has to be modified before being used by our launch files. In order to modify it, first kill the currently running Gazebo launch file and run:
+When all the models are inserted in the scene and placed in desired position, the world file can be saved. Go to **File → Save World As** and select a name and a path of a world file saved with gazebo. Make sure to remember the path to the file. We recommend using the path `/home/user`. Although the file has now been saved, it has to be modified before being used by our launch files. In order to modify it, first kill the currently running Gazebo launch file and run:
 
 ```eval_rst
 .. prompt:: bash $
@@ -285,7 +285,7 @@ When a message `World saved!` will appear in the console, kill the launch file. 
 
 #### Creating a scene file
 
-In order to generate a scene file for collision scene used in non-simulated scenarios, first, run the initial launch file with the just created world file passed to the `world` argument:
+In order to generate a scene file for collision scene used in non-simulated scenarios, first run the initial launch file with the just created world file passed to the `world` argument:
 
 ```eval_rst
 .. prompt:: bash $
@@ -303,7 +303,7 @@ where **path_to_world** is the full path to the world file that just has been ge
 
 and click **Export As Text**. A pop-up window will appear asking for a name and path for the file. It is recommended that the file is saved in the sr_description_common package, scenes folder and it's name is the same as the corresponding world file.
 
-A video depicting the process described above can by found [here](https://drive.google.com/file/d/1Uv1MeC2xc1nZ8Ati1cKaegHN8LJzsyhM/view?usp=sharing).
+A video depicting the process described above can be found [here](https://drive.google.com/file/d/1Uv1MeC2xc1nZ8Ati1cKaegHN8LJzsyhM/view?usp=sharing).
 
 ### Using the graphical user interface
 
@@ -328,13 +328,13 @@ In order to start a new Gazebo session set following parameters to your preferen
 * **empty world** - choose `yes` if you want to start with an empty world. Choose `no` if you want to start the session with a specific world file loaded. You can type the path to the world file in the edit box or navigate to the file using the `browse` button
 * **initial z** - set `z` position of the robot base. Default value corresponds to tables used at Shadow
 
-After setting the above parameters to your preference, click `Open`. A new session of Gazebo will start. After modifying the world to your liking, as in the instructions in the previous sections, go to `File → Save World As` and select a name and a path of a world file. Make sure to remember the path to the file. Recommended path is just `/home/user`. Although the file has now been saved, it has to be modified before being used by our launch files. In order to do that, first kill current Gazebo session using the `Close` button in the `Open Gazebo` section of the GUI. Then use the `Transform world file` area to navigate to your newly created Gazebo world file and click `Transform`. A pop-up window will appear asking for the properly formatted world file name. After clicking `Save` your file will be created and will be ready to be used.
+After setting the above parameters to your preference, click `Open`. A new session of Gazebo will start. After modifying the world to your liking, as in the instructions in the previous sections, go to `File → Save World As` and select a name and a path of a world file. Make sure to remember the path to the file. We recommended the path `/home/user`. Although the file has now been saved, it has to be modified before being used by our launch files. In order to do that, first kill current Gazebo session using the `Close` button in the `Open Gazebo` section of the GUI. Then use the `Transform world file` area to navigate to your newly created Gazebo world file and click `Transform`. A pop-up window will appear asking for the properly formatted world file name. After clicking `Save` your file will be created and will be ready to be used.
 
 You can use the `Open Gazebo` section again to check your newly created world file and export it to the `scene` file as described in the sections above.
 
 ## Sensor information
 ### Force/Torque feedback (only applicable for UR10e)
-The UR10e comes equipped with a force/torque sensor on the end effector with the followin specifications:
+The UR10e comes equipped with a force/torque sensor on the end effector with the following specifications:
 
 ```eval_rst
 +----------------------------+---------+
