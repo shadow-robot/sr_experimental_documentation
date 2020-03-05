@@ -15,7 +15,7 @@ ROS Kinetic (Recommended):
     bash <(curl -Ls bit.ly/run-aurora) docker_deploy product=hand_e
 ```
 
-You can also add reinstall=true true in case you want to reinstall the docker image and container. When it finishes it will show:
+You can also add reinstall=true in case you want to reinstall the docker image and container. When it finishes it will show:
 ```bash
 Operation completed
 ```
@@ -23,7 +23,7 @@ and it will create two icons on your desktop that you can double-click to launch
 
 ### Starting a robot in simulation
 
-First you need to start the system container by either doble clicking the icon "Arm_Hand_Container" or running the following command:
+First you need to start the system container by either double clicking the icon "Arm_Hand_Container" or running the following command:
 ```eval_rst
 .. prompt:: bash $
 
