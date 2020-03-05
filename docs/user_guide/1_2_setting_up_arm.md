@@ -9,7 +9,7 @@
    ```eval_rst
    .. image:: ../img/ur10_control_box.jpg
    ```
-4. Plug on the robot cable between the robot and the control box.
+4. Plug in the robot cable between the robot and the control box.
    ```eval_rst
    .. image:: ../img/ur10_control_box_cables.jpg
    ```
@@ -50,7 +50,7 @@ In order to use the robot with our driver you need to change the network setup o
 4. Press "Apply" when you finish.
 
 ## Table-Arm Calibration Procedure
-Follow these steps if you have a table and a stylus provided by Shadow Robot. It should only be ran once when the table is setup for the first time.
+Follow these steps if you have a table and a stylus provided by Shadow Robot. It should only be run once when the table is setup for the first time.
 
 1. The arm should be mounted on the table but without hand. First, mount the calibration stylus as shown below:
 
@@ -123,7 +123,7 @@ Follow these steps if you have a table and a stylus provided by Shadow Robot. It
    ```
    Now you should not be able to move the arm
 
-If you want to use a existing calibration, a calibration tf can be broadcast by running:
+If you want to use an existing calibration, a calibration tf can be broadcast by running:
 ```eval_rst
 .. prompt:: bash $
     
