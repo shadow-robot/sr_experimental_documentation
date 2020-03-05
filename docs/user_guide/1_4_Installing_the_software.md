@@ -21,7 +21,7 @@ In the above example, ‘enp0s25’ is the interface ID that is needed.
 ## Get ROS Upload login credentials
 
 If you want to upload technical logged data (ROS logs, backtraces, crash dumps etc.) to our server and notify the Shadow's software team to investigate your bug then you need to enable logs uploading in the one-liner. In order to use this option you need to obtain a unique upload key by emailing sysadmin@shadowrobot.com. When you receive the key you can use it when running the one-liner installation tool. To enable the logs uploading you need to add the command line option ```use_aws=true``` to the one-liner.
-After executing the one-liner, it will prompt you to enter your upload key and press enter to continue. Pleaser copy and paste your key from the email you received by Shadow Robot.
+After executing the one-liner, it will prompt you to enter your upload key and press enter to continue. Pleaser copy and paste your key from the email you received from Shadow Robot.
 
 ## Check your hand configuration branch
 
@@ -65,7 +65,7 @@ Same as above but with ROS logs upload enabled
 
 If you have an Nvidia graphics card, you can add nvidia_docker to set the nvidia-docker version. Use ``nvidia_docker=1`` or ``nvidia_docker=2`` for version 1.0 or 2.0 respectively.
 
-You can also add reinstall=true true in case you want to reinstall the docker image and container. 
+You can also add reinstall=true in case you want to reinstall the docker image and container. 
 
 When the one-liner finishes it will show:
 
@@ -77,7 +77,7 @@ and it will create two desktop icons on your desktop that you can double-click t
 
 # Starting the driver
 
-Launch the driver for the Shadow Hand using the desktop icon 'Shadow_Hand_Launcher' if the one-liner was executed using the ```launch_hand=true``` argument or at a terminal (in the container), type:
+Launch the driver for the Shadow Hand using the desktop icon 'Shadow_Hand_Launcher'. If the one-liner was executed using the ```launch_hand=true``` argument or at a terminal (in the container), type:
 
 ```eval_rst
 .. prompt:: bash $
@@ -112,4 +112,4 @@ Joint sensor chip select   Yellow              Off                 Sensors not b
 ```
 
 # Saving log files and uploading data to our server
-After running the one-liner, you will also notice a second icon named `Save logs` that is used to retrieve and copy all the available logs files from the active containers locally to your Desktop. This icon will create a folder that matches the active container's name and the next level will include the date and timestamp it was executed. When it starts, it will prompt you if you want to continue, if you press yes it will close all active containers. After pressing "yes", you will have to enter a description of the logging event and will start coping the bag files, logs and configuration files from the container and then exit. Otherwise, the window will close and no further action will happen. If you provided an upload key with the one-liner installation then the script will also upload your LOGS in compressed format to our server and notify the Shadow's software team about the upload. This will allow the team to fully investigate your issue and provide support where needed.
+After running the one-liner, you will also notice a second icon named `Save logs` that is used to retrieve and copy all the available logs files from the active containers locally to your Desktop. This icon will create a folder that matches the active container's name and the next level will include the date and timestamp it was executed. When it starts, it will prompt you if you want to continue, if you press yes it will close all active containers. After pressing "yes", you will have to enter a description of the logging event and will start copying the bag files, logs and configuration files from the container and then exit. Otherwise, the window will close and no further action will happen. If you provided an upload key with the one-liner installation then the script will also upload your LOGS in compressed format to our server and notify the Shadow's software team about the upload. This will allow the team to fully investigate your issue and provide support where needed.
