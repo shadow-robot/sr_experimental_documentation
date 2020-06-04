@@ -2,7 +2,7 @@
 
 ```eval_rst
 
-.. caution::  This documentation is outofdate. Please visit this link for an `updated version <https://sr-dexterous-hand-arm.readthedocs.io/en/latest/user_guide/1_2_setting_up_arm.html>`_
+.. caution::  This documentation is out-of-date. Please visit this link for an `updated version <https://sr-dexterous-hand-arm.readthedocs.io/en/latest/user_guide/1_2_setting_up_arm.html>`_
 
 ```
 
