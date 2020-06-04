@@ -1,5 +1,11 @@
 # Setting up the arm
 
+```eval_rst
+
+.. error: This documentation is outofdate. Please visit this link for an `updated version <https://sr-dexterous-hand-arm.readthedocs.io/en/latest/user_guide/1_2_setting_up_arm.html>`_
+
+```
+
 1. Unpack the robot arm and the control box.
 2. Mount the arm on the table. If you have a demo table, the cable socket should point roughly towards the wire hole in the table. Place the base of the robot onto the mounting plate and add screws from the top. 
    ```eval_rst
