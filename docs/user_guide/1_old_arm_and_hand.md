@@ -283,16 +283,16 @@ We have created a one-liner that is able to install Docker, download the image a
 
   ROS Kinetic (Recommended):
   ```bash
-  $ bash <(curl -Ls bit.ly/run-aurora) docker_deploy product=hand_e ethercat_interface=[EtherCAT interface ID] config_branch=[sr_config_branch]
+  $ bash <(curl -Ls bit.ly/run-aurora) docker_deploy product=hand_e ethercat_right_hand=[EtherCAT interface ID] config_branch=[sr_config_branch]
   ```
   Examples:
   For Interface ID ```ens0s25``` and sr_config_branch ```shadow_12345```
   ```bash
-  $ bash <(curl -Ls bit.ly/run-aurora) docker_deploy product=hand_e ethercat_interface=ens0s25 config_branch=shadow_12345
+  $ bash <(curl -Ls bit.ly/run-aurora) docker_deploy product=hand_e ethercat_right_hand=ens0s25 config_branch=shadow_12345
   ```  
   Same as above but with ROS logs upload enabled
   ```bash
-  $ bash <(curl -Ls bit.ly/run-aurora) docker_deploy product=hand_e ethercat_interface=ens0s25 config_branch=shadow_12345 use_aws=true
+  $ bash <(curl -Ls bit.ly/run-aurora) docker_deploy product=hand_e ethercat_right_hand=ens0s25 config_branch=shadow_12345 use_aws=true
   ```  
   
   If you have an Nvidia graphics card, you can add nvidia_docker to set the nvidia-docker version. Use ``nvidia_docker=1`` or ``nvidia_docker=2`` for version 1.0 or 2.0 respectively.
